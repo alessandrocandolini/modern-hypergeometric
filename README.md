@@ -1,3 +1,5 @@
+[![CI](https://github.com/alessandrocandolini/modern-hypergeometric/actions/workflows/ci.yml/badge.svg)](https://github.com/alessandrocandolini/modern-hypergeometric/actions/workflows/ci.yml)
+
 # notes on the hypergeometric functions 
 
 This is an attempt to port, modernise, and evolve this legacy repo of mine: https://github.com/alessandrocandolini/handout_hypergeometric
