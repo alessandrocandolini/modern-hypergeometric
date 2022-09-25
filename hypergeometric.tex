@@ -26,6 +26,7 @@
 \usepackage{tabularx}
 \usepackage{booktabs}
 \usepackage{subfig}
+\usepackage{sidecap}
 \usepackage{url}
 
 % *****************************************************************************
@@ -45,13 +46,9 @@ natbib,ibidtracker=false]{biblatex}
 % *****************************************************************************
 % ClassicThesis
 % *****************************************************************************
-\usepackage[pdfspacing]{classicthesis}
+\usepackage[pdfspacing, eulerchapternumbers,listings,subfig,eulermath,parts]{classicthesis}
 
-% ********************************************************************
-% General commands
-% ********************************************************************
 
-% un ambiente ad hoc per le citazioni
 \newenvironment{citazione}%
   {\begin{quotation}\small\ignorespaces}%
   {\end{quotation}}
@@ -59,7 +56,6 @@ natbib,ibidtracker=false]{biblatex}
   {\begin{quotation}\small\ignorespaces}%
   {\end{quotation}}
 
-% indica a LaTeX la cartella dove sono riposte le immagini
 \graphicspath{{./},{./Asymptote/}, {./Images/}}
 
 % i.e.
@@ -77,7 +73,7 @@ natbib,ibidtracker=false]{biblatex}
     breaklinks=true, pdfpagemode=UseNone, pageanchor=true, pdfpagemode=UseOutlines,%
     plainpages=false, bookmarksnumbered, bookmarksopen=true, bookmarksopenlevel=1,%
     hypertexnames=true, pdfhighlight=/O,%
-    urlcolor=webbrown, linkcolor=RoyalBlue, citecolor=RoyalBlue,
+    urlcolor=webbrown, linkcolor=RoyalBlue, citecolor=RoyalBlue,citecolor=webgreen,
     pdftitle={\myTitle},%
     pdfauthor={\textcopyright\ \myName},%
     pdfsubject={},%
@@ -86,13 +82,11 @@ natbib,ibidtracker=false]{biblatex}
     pdfproducer={LaTeX con hyperref e ClassicThesis}%
 }
 
-\hypersetup{citecolor=webgreen}
-
 \newcommand{\mail}[1]{\href{mailto:#1}{\texttt{#1}}}
 
 
 % *****************************************************************************
-% Matematica
+% Math
 % *****************************************************************************
 
 % AMSmath packages
@@ -145,84 +139,32 @@ natbib,ibidtracker=false]{biblatex}
 \renewcommand{\qedsymbol}{\rule{.5em}{.5em}}
 
 
-% *****************************************************************************
-% caption
-% *****************************************************************************
 \usepackage{caption}                      % Fancy captions and more.
 \captionsetup{format=hang,font=small}
 \captionsetup[table]{skip=\medskipamount}
 
-
-% *****************************************************************************
-% breqn
-% *****************************************************************************
-\usepackage{mathtools}                    % Add support for cramped,
-\usepackage{flexisym}              % Add support to Euler font
-\usepackage{breqn}                        % Breqn
+\usepackage{mathtools}
+\usepackage{flexisym}
+\usepackage{breqn}
 
 \setkeys{breqn}{labelprefix={eq:}}
 
 
-% *****************************************************************************
-% Migliorare il kerning dell'apostrofo coi font MinionPro
-% *****************************************************************************
-\makeatletter
-\catcode`\'=12
-\def\qu@te{'}
-\catcode`'=\active
-\begingroup
-\obeylines\obeyspaces%
-\gdef\@resetactivechars{%
-\def^^M{\@activechar@info{EOL}\space}%
-\def {\@activechar@info{space}\space}%
-}%
-\endgroup
-\providecommand{\texorpdfstring}{\@firstoftwo}
-\protected\def'{\texorpdfstring{\active@quote}{\qu@te}}
-\def\active@quote{\relax
-  \ifmmode
-    \expandafter^\expandafter\bgroup\expandafter\prim@s
-  \else
-    \expandafter\futurelet\expandafter\@let@token\expandafter\qu@t@
-  \fi}
-\def\qu@t@{%
-  \ifx'\@let@token
-    \qu@te\qu@te\expandafter\@gobble
-  \else
-    {}\qu@te{}\penalty\@M\hskip\expandafter\z@skip
-  \fi}
-\scantokens\expandafter{%
-  \expandafter\def\expandafter\pr@m@s\expandafter{\pr@m@s}}
-\makeatother
-
 \begin{document}
 \pagenumbering{roman}
 \pagestyle{plain}
-% *****************************************************************************
-% Materiale iniziale
-% *****************************************************************************
 \input{FrontBackmatter/Titlepage}
 \input{FrontBackmatter/Titleback}
-%\input{FrontBackmatter/Dedication}
-%\input{FrontBackmatter/Sommario+Abstract}
-%\input{FrontBackmatter/Pubblicazioni}
-%\input{FrontBackmatter/Ringraziamenti}
 \pagestyle{scrheadings}
 \input{FrontBackmatter/TableOfContents}
 \input{FrontBackmatter/Preface}
 \cleardoublepage
-% *****************************************************************************
-% Materiale principale
-% *****************************************************************************
 \pagenumbering{arabic}
 \input{Chapters/Chapter1}
 \input{Chapters/Chapter2}
 \input{Chapters/Chapter3}
 \appendix
 \input{Chapters/AppendixA}
-% *****************************************************************************
-% Materiale finale
-% *****************************************************************************
 \input{FrontBackmatter/Bibliography}
 \input{FrontBackmatter/Index}
 \end{document}
