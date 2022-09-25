@@ -1,0 +1,1645 @@
+
+%*******************************************************
+% Chapter 1
+%*******************************************************
+
+%\myChapter[Fuchsian differential equations]{Fuchsian 
+%	differential equations of the second order in the complex domain}
+
+
+\myChapter{Fuchsian differential equations}
+\label{chap:fuchs}
+
+
+%\begin{approfondimento}
+%Integrals  of Fuchsian differential equations are a powerful source of higher trascendental
+%functions.
+%\begin{flushright}
+%	--- Folklore
+%\end{flushright}
+%\end{approfondimento}
+
+%In this chapter, we discuss a number of facts
+This chapter is mainly concerned with existence and properties (analytic structure, many-valuedness,
+convergent power series representations,%
+\footnote{Asymptotic (divergent) power series
+   representations, integral representations or other kind of series
+   representations are not discussed in general.}
+etc) of the integrals of linear homogeneus ordinary differential equations of the
+second order in which the independent variable is complex and whose coefficients
+are single-valued and analytic complex functions of the independent variable, having
+at most finitely many isolated singular points in (a given domain of) the
+complex plane.
+
+
+
+%discuss 
+%Fuchsian theory of linear
+%homogeneus ordinary differential equation (of the second order) in the complex domain.
+%First, we shall 
+
+
+%More precisely, we shall consider equations of the solutions of second-order
+%whose  coefficients will be assumed to be single-valued analytic complex-valued
+%functions having at most a finite number of isolated singularities in their
+%domain of definition.
+
+%\footnote{Not all special functions are constructed from solutions of
+%\emph{linear} differential equations. Some are constructed from solutions of
+%certain \emph{non-linear} differential equations (\eg, the non-linear
+%Painlev\'e trascendents), others, like the Euler's gamma function, does not
+%appear to satisfy any simple ordinary differential equation (for sure, the
+%gamma function cannot satisfy any algebraic differential equation whose
+%coefficients are rational functions, this result is known as H\"older
+%theorem).}
+
+Several, through  not all,%
+\footnote{Riemann's zeta function and Euler's gamma function are examples of
+   functions which are essentially characterized by \emph{functional} equations
+   instead of differential equation.  (For instance, H\"older's theorem states that
+   the gamma function does not satisfy \emph{any} algebraic differential equation
+   whose coefficients are rational functions.) Other higher trascendental
+   functions, like the Painlev\'e trascendents, arise in connection with the
+   solution of certain \emph{non}-linear ordinary differential equations in the
+   complex field (see, \eg, \textcite{Ince:1956}).}
+   higher trascendental functions of applied
+mathematics satisfy differential equations of this form,
+   and the results of this chapter
+provide a useful  tool for establishing in a systematic way some of their
+properties and representations, working directly from the differential
+equation satisfied by them.% 
+\footnote{Someone might prefer to begin
+   with integral or series representations, 
+   and to write down the differential
+   equations only later.} In particular, we shall put these
+results at work in the following chapter discussing Gauss' hypergeometric
+differential equation and its solutions.
+
+This chapter is mostly based on \textcite[\S~V]{Tricomi:1961};
+\textcite[\S~2]{Wang.Guo:1989}. See also \textcite[\S~V]{Smirnov:1964};
+\textcite[\S~X]{Whittaker.Watson:1927}.  In what follows, knowledge of
+the theory of analytic  functions of one complex variable is assumed.%
+\footnote{%
+   There are many books on the theory of analytic functions of one complex
+   variable.  Among my favourite ones are the monographies by
+   \textcite{Ablowitz.Fokas:2003,Stein.Shakarchi:2003,Marsden.Hoffman:1987,Greene.Krantz:2006};
+   or consult any good book on complex analysis.}
+
+
+%\section{General theory of linear differential equations in the complex field}
+
+\section[Solution in the neighbourhood of an ordinary point]{Existence and
+   uniqueness of the solution in the neighbourhood of an ordinary
+   point}\label{sec:existence}
+
+%\section{Local solution about an ordinary point}
+%\label{sec:existence}
+%\section{Ordinary and singular points}
+
+A full and systematic account of the general theory of ordinary differential
+equations or systems of ordinary differential equations in the complex field,
+although useful in practise, is beyond the scope of this handout. For a broader
+discussion, see, \eg, the previously mentioned book by \textcite{Tricomi:1961}
+or \textcite{Ince:1956}.
+
+%\nocite{Ilyashenko.Yakovenko:2008} 
+%\nocite{Teschl:2011}
+
+We \graffito{Second-order homogeneus linear ordinary differential equations in
+   the complex field\ldots} shall restrict our attention to a linear homogeneus
+ordinary differential equation of the second order,% 
+\footnote{%
+   The result of the first sections of this chapter apply with obvious
+   generalizations to the case of linear equations of arbitrary order, but
+   the second order is enough to our purposes and leads to easier
+   notations.
+}
+which can always be written in such a way that the coefficient of the
+second-order derivative is identically equal to one (this will be taken to be
+the standard form of the equation of the equation):
+\begin{dmath}[label={ode}, frame]
+   u'' (z) + p(z) u'(z) + q(z) u(z) = 0 ,
+\end{dmath}
+where $u(z)$ is the unknown (complex-valued) function and $z$ denotes the
+independent complex variable. The coefficients $p(z)$ and $q(z)$ are assigned
+complex-valued functions defined on some given set of the complex $z$-plane.
+Primes denote differentiation, in the complex sense,
+with respect to the variable $z$.
+
+Throughout this chapter, 
+\graffito{\ldots whose coefficients are single-valued and analytic up to
+   finitely many isolated singularities}
+%in a given domain of the complex plane.}
+we shall assume that  each of the coefficients $p(z)$ and
+$q(z)$ is a
+\emph{single-valued}
+function, defined and \emph{analytic} on some given \emph{domain}%
+\footnote{\ie, an open and connected subset of $\C$.}
+$\Omega
+\subset\C$ 
+of the complex $z$-plane (eventually, $\Omega = \C$), with the possible exception of \emph{at most} a finite number of
+\emph{isolated} singular points%
+\footnote{which may be either poles or essential singularities of the coefficients.}
+within $\Omega$.
+
+
+%\begin{mdframed}[backgroundcolor=lightgray,
+%roundcorner=5pt, 
+%skipabove=10pt,skipbelow=10pt]
+
+%Let us briefly summarize  the main definitions concerning the theory of analytic
+%functions of one complex variable.
+%There are many books on the subject, 
+%among my favourite ones are the monographies by
+%\textcite{Ablowitz.Fokas:2003,Stein.Shakarchi:2003,Marsden.Hoffman:1987,Greene.Krantz:2006}.
+%%Hille:1959
+%See also \textcite[\S~1]{Smirnov:1964} and
+%\textcite[\S~4]{Giaquinta.Modica:2007}, \textcite[\S~4]{Godement:2004},
+%or consult any other book on complex analysis.
+%%\footcite{Hille:1959, Ablowitz.Fokas:2003,Stein.Shakarchi:2003,
+%%Marsden.Hoffman:1987, Smirnov:1964, Giaquinta.Modica:2007, Godement:2004}
+
+
+%Let $\Omega$ be an \emph{open} set in $\C$, $z_{0}\in\C$ any point of
+%\graffito{Brief resume on what is an holomorphic function of one complex variable}
+%$\Omega$ and $f:\Omega\rightarrow\C$ a complex-valued function defined on $\Omega$.
+%$f$ is said to be ``differentiable'' in the complex sense at $z_{0}$  if the
+%following limit exists:
+%\begin{dmath*}
+%\lim_{z\rightarrow z_{0}} \frac{f(z) -f(z_{0})}{z-z_{0}} .
+%\end{dmath*}
+%(Remember that if the limit exists then it must be equal along any restriction.)
+%If this is the case, such limit will be denoted by $f'(z_{0})$ and will be
+%called the ``complex derivative'' of $f$ at $z_{0}$.  If $f$ admits complex
+%derivative at every point of $\Omega$, then it is said to be ``holomorphic'' in
+%$\Omega$.  This condition has far-reaching conseguences, in particular it
+%implies  (Taylor's theorem) that $f(z)$ can be expanded in a convergent power
+%series near $z_{0}$ having non-zero radius of convergence (\ie, $f(z)$ is
+%\emph{analytic} on $\Omega$). Since the converse is also true, \ie, any
+%convergent power series defines a holomorphic function in its disk of
+%convergence, then  it is possible to identify analytic and holomorphic functions
+%on $\Omega$.  Sometimes, we shall say that $f$ is analytic at $z_{0}$: This is a
+%shortcut to say that there exists a neighbourhood of $z_{0}$ on which $f$ is
+%analytic.
+
+%We look for solutions of \eqname s~\eqref{eq:ode} satisfying 
+
+%\subsection{Classification of ordinary and singular points}
+
+Let us classify the point of $\Omega$ according to whether or not they are
+isolated singular points of the coefficients of the differential equation.%
+\footnote{%
+   This classification holds for points $z_{0}$ at \emph{finite} distance
+   in the complex plane. The classification of the point at infinity (in
+   the case $\Omega = \C$) requires special treatment and will be discussed
+   separately in \S~\ref{sec:point at infinity}.
+}
+
+\begin{definition}
+
+   Let $z_{0}\in\Omega$.  \graffito{Definition of ordinary point of the
+      differential equation} $z_{0}$ is called an ``ordinary'' point of
+   Eq.~\eqref{eq:ode} if the coefficient functions $p(z)$ and $q(z)$ are
+   both analytic at $z_{0}$.%
+   \footnote{%
+      As usual, we shall see that a function is analytic \emph{at} a
+      point $z_{0}$ to say that the function is analytic in an (open)
+      neighbourhood of $z_{0}$.
+   } 
+   Otherwise, if $z_{0}$ is a singular point of either $p(z)$ or $q(z) $ or
+   both, then $z_{0}$ is said to be a ``singular'' point of
+   Eq.~\eqref{eq:ode}.
+
+\end{definition}
+
+Let $z_{0}\in\Omega$ an ordinary point of Eq.~\eqref{eq:ode}.  We look for
+solutions $u(z)$ \graffito{Initial conditions} of Eq.~\eqref{eq:ode} defined in
+a suitable neighbourhood (to be determined) of $z_{0}$ and which satisfy the
+following initial conditions at $z_{0}$:
+\begin{dmath}[label={ic}]
+   \left\lbrace
+   \addtolength{\arraycolsep}{-3pt}
+   \begin{array}{rcl}
+      u(z_{0}) &=& \alpha \\
+      u'(z_{0})&=&\beta
+   \end{array}
+   \right.
+\end{dmath}
+where $\alpha$ and $\beta$ are arbitrary-assigned complex numbers.
+Eq.~\eqref{eq:ode} together with the initial conditions~\eqref{eq:ic} constitute
+what is called an ``initial valued problem''.
+
+%% TODO where is z0? In Omega? Not exactly. In the domain of p(z) and q(z).
+
+
+
+%Any point in $\Omega$ can be classified according to the following
+%definition.%
+
+%\subsection{Existence  and
+%uniqueness theorem of the solution in the neighbourhood of an ordinary
+%point\label{subsec:existence}}
+
+%\section{Solution in the neighbourhood of an ordinary point}
+%\label{sec:existence}
+\begin{theorem}
+   Let $z_{0}\in\Omega$ be an ordinary point 
+   \graffito{Local existence and uniqueness theorem}
+   of Eq.~\eqref{eq:ode}.
+   %and let $S\subseteq
+   %\Omega$ be the disk centered at $z_{0}$ and whose radius is such that $p(z)$ and
+   %$q(z)$ are analytic on $S$.
+   Then, for every complex $\alpha$ and $\beta$ there exists one and only one solution of Eq.~\eqref{eq:ode} 
+   which satisfies 
+   the initial conditions~\eqref{eq:ic} 
+   and which is 
+   analytic and single-valued  in a suitable neighbourhood of 
+   $z_{0}$.
+\end{theorem}
+
+\begin{proof}
+
+   Let \graffito{The a-priori knowledge of the disk of convergence of the solution}
+   $S$ be the circle with centre at $z_{0}$ and whose radius is  such that every
+   point of $S$ is a point of $\Omega$ and is also an ordinary point of the
+   Eq.~\eqref{eq:ode}.  There always exists such $S$  with \emph{non-zero} radius
+   owing to the fact that $\Omega$ is an open set and all the singularities of
+   $p(z)$ and $q(z)$  (if any) are isolated.  We shall prove that a solution of
+   Eq.~\eqref{eq:ode} always exists which is \emph{analytic} in $S$ (perhaps also
+   in a larger domain) and that such solution is also the unique analytic solution
+   of Eq.~\eqref{eq:ode} satisfying the prescribed initial
+   conditions~\eqref{eq:ic}.
+
+   The first step is \graffito{First step: equation in ``reduced''
+      form} to convert Eq.~\eqref{eq:ode}  into its ``reduced'' form.%
+   \footnote{%
+      This method of proof is that, \eg, of
+      \textcite[\S~10.2]{Whittaker.Watson:1927}.  The method is not suitable
+      for generalization to equations of higher orders.  However, the theorem
+      holds for linear differential equations of any order.  For a different
+      proof which  can be easily adapted to the general case see, \eg,
+      \textcite{Smirnov:1964,Wang.Guo:1989}.
+   }
+   This is done by introducing a new unknown function $v(z)$ related to the
+   original one $u(z)$ by 
+   \begin{dmath*}
+      u(z) = k(z) v(z)
+   \end{dmath*},
+   where $k(z)$ is an auxiliary function to be determined by requiring
+   that the resulting differential equation for $v(z)$ have the coefficient
+   function of $v'(z)$
+   identically equal to
+   zero. We shall see that it always possible to find such $k(z)$ and 
+   we shall give an explicit formula for it. 
+   In fact, the first- and second-order derivatives of $u(z)$ are
+   \begin{dgroup*}
+      \begin{dmath*}
+	 u'(z) = k'(z) v(z) + k(z) v'(z)
+      \end{dmath*},
+      \begin{dmath*}
+	 u''(z) = k''(z) v(z) + 2k'(z) v'(z) + k(z) v''(z) 
+      \end{dmath*}.
+   \end{dgroup*}
+   Plugging into Eq.~\eqref{eq:ode}, we get the differential equation for $v(z)$, 
+   \begin{dmath*}%[label={odev(z)convp(z)}]
+      k(z) v''(z) + \big[ 2 k'(z) + p(z) k(z) \big] v'(z) + \big[ k''(z) + p(z)
+      k'(z) + q(z) k(z) \big] v(z) = 0
+   \end{dmath*},
+   and in order the coefficient of $v'(z)$ to be zero, $k(z)$ must satisfy 
+   \begin{dmath}[label={odek(z)}]
+      2k'(z) + p(z) k(z) = 0
+   \end{dmath}.
+   Eq.~\eqref{eq:odek(z)} is an homogeneus linear ordinary differential equation of
+   the first order in the unknown $k(z)$. One solution of it is the identically
+   zero function.  We look for non-identically zero solutions.  One way to get such
+   a solution is to rewrite Eq.~\eqref{eq:odek(z)} as
+   \begin{dmath*}
+      \frac{k'(z) }{k(z)} = - \frac{1}{2} p(z) .
+   \end{dmath*}
+   The operation of dividing by $k(z)$ is valid because we are looking for non
+   identically zero solutions $k(z)$ and if $k(z)$ were zero at some specific point then it
+   would be zero everywhere.%
+   \footnote{This requires some explanation. It can be seen as  a conseguence of 
+      the existence and uniqueness theorem of integrals of first-order linear
+      differential equations with given initial conditions. However, although the
+      Reader may
+      probably be familiar   with this theorem and how to apply it in the context of
+      real calculus, here we have never
+      stated such theorem in the complex field. To avoid using in the proof some
+      fact which we have never dealt with before nor we shall never deal with again in this
+      handout, we prefer a more direct approach: We chech a-posteriori that our
+      requirement is fulfilled. It is not very elegant but nevertheless it does the
+      job!}
+   The left-hand side of the previous equation is the logarithmic derivative of
+   $k(z)$, therefore by integrating from
+   $z_{0}$ to $z\in S$ and exponentiating we get
+   \begin{dmath}[label={k(z)}]
+      k(z) = \exp \left\{ - \frac{1}{2} \Int{p(\xi)}{\xi, z_{0},z}\right\}
+      %\condition*{\forall z \in S}
+   \end{dmath},
+   up to a constant multiplicative \emph{non-zero} factor which is completely unrelevant for our
+   purposes.%
+   \footnote{As far as the constant is different from zero, the only effect of such constant
+      would be to change the ``initial value''
+      $k(z_{0})$, which have no effect on the differential equation since the equation
+      is homogeneus. With our choice, $k(z_{0}) = 1$.}
+   There is no need to specify in the right-hand side of Eq.~\eqref{eq:k(z)} the
+   contour of integration, since the integrand
+   $p(\xi)$ is analytic is $S$ (by hypothesis) and $z$ is any point in $S$.
+   After dividing by $k(z)$ (now we know from the explicit formula of $k$ that
+   $k$ never vanishes) the equation for $v(z)$ becomes  
+   \begin{dmath}[label={odev(z)}]
+      v''(z) + J(z) v(z) = 0
+   \end{dmath},
+   where 
+   \begin{dmath*}
+      J(z) = \frac{k''(z)}{k(z)} + p(z) \frac{k'(z)}{k(z)} + q(z)
+   \end{dmath*}.
+   We can use Eq.~\eqref{eq:odek(z)} to rewrite $J(z)$ in a more explicit form.
+   Notice that
+   \begin{dmath*}[compact]
+      \left( \frac{k'(z)}{k(z)} \right)^{\prime} = 
+      \frac{k''(z) k(z) - \left( k'(z) \right) ^{2} }{k^{2}(z)} = \frac{k''(z)}{k(z)}
+      - \left( \frac{k'(z)}{k(z)} \right)^{2} 
+   \end{dmath*},
+   so
+   \begin{dmath*}
+      \frac{k''(z)}{k(z)} = \left( \frac{k'(z)}{k(z)} \right)^{\prime} + \left(
+	 \frac{k'(z)}{k(z)} \right)^{2} 
+   \end{dmath*}.
+   Using Eq.~\eqref{eq:odek(z)} we get
+   \begin{dmath*}
+      \frac{k''(z)}{k(z)} = - \frac{1}{2} p'(z)  + \left( \frac{1}{2} p(z)
+      \right)^{2}
+   \end{dmath*},
+   and then
+   \begin{dmath}[label={J(z)}]
+      J(z) =  - \frac{1}{2} p'(z) - \frac{1}{4} p^{2} (z) + q(z) 
+   \end{dmath}.
+
+   We shall \graffito{From $v(z)$ to $u(z)$} now prove by the method of
+   successive approximations that there must exist one and only one solution
+   $v(z)$ of Eq.~\eqref{eq:odev(z)} which is analytic and single-valued in $S$
+   and which satisfies the initial conditions
+   \begin{dmath}[label={icv(z)}]
+      %\begin{cases}
+      \addtolength{\arraycolsep}{-3pt}
+      \left\lbrace
+      \begin{array}{rcl}
+	 v(z_{0}) &=& c_{0} \\
+	 v'(z_{0}) &=& c_{1}
+      \end{array}\right. ,
+   \end{dmath}
+   where $c_{0}$ and $c_{1}$ are arbitrary complex constants.  From this
+   result, 
+   it will immediately follow that also Eq.~\eqref{eq:ode} must have one and
+   only one 
+   solution $u(z)$ which is analytic and single-valued in  $S$ and which satisfies
+   \begin{dgroup}
+      \begin{dmath*}[compact]
+	 u(z_{0}) = k(z_{0} ) v(z_{0}) = c_{0} ,
+      \end{dmath*}
+      \begin{dmath*}[compact]
+	 u'(z_{0}) = k'(z_{0}) v(z_{0}) + k(z_{0}) v'(z_{0}) = - \frac{1}{2} p(z_{0})
+	 c_{0} + c_{1} .
+      \end{dmath*}
+   \end{dgroup}
+   From the arbitrariness of $c_{0}$ and $c_{1}$,  we will conclude that  there
+   must be one and only one solution $u(z)$ of Eq.~\eqref{eq:ode} which is analytic and
+   single-valued in $S$ and which satisfies 
+   the desired initial
+   conditions~\eqref{eq:ic} for any  given  value of $\alpha$ and $\beta$.
+
+   We define 
+   \graffito{Second step: construction of the solution}
+   a sequence $( v_{n} )_{n\in\N}$ of complex-valued functions on $S$.
+   For every $z\in S$, let
+   \begin{dmath*}
+      v_{0} (z) = a + b \left( z- z_{0} \right) ,
+   \end{dmath*}
+   where $a$ and $b$ are arbitrary complex numbers,
+   and recursively
+   \begin{dmath*}
+      v_{n+1} (z) = \Int{\left( \xi -z \right) v_{n} (\xi) J(\xi)}{\xi, z_{0}, z}\condition*{n\geq 0 } .
+   \end{dmath*}
+   At every stage the integrand is an analytic function of $\xi$ and so the
+   value of the integral does not depend on the contour of integration.
+   Let us prove this fact by induction.
+   First of all, $v_{0}(z)$ is easily seen to be analytic for every $z\in S$
+   (indeed,
+   it is an entire function);
+   furthermore, assuming $v_{n}(z)$ to be analytic on $S$ we get 
+   that $(\xi -z) v_{n}(\xi) J(\xi) $ as a function of $\xi$ is analytic on $S$  so
+   its integral between $z_{0}$ and any $z\in S$ does not depend on the contour of
+   integration and defines a new function $v_{n+1}(z)$ which also is analytic on $S$.
+
+   It will be helpful to compute explicitly the first and second derivatives of
+   these
+   functions.
+   For $n=0$ we simply have
+   %\begin{dgroup*}
+   %\begin{dmath*}
+   $v_{0} ' (z)  = b$ and 
+   %\end{dmath*}
+   %\begin{dmath*}
+   $v_{0} '' (z)  = 0$, for every $z\in \Omega$.
+   %\end{dmath*}
+   %\begin{dsuspend}
+   In all other cases we have
+   \begin{dmath*}
+      v_{n+1}' (z) =  - \Int{ v_{n} (\xi) J(\xi) }{\xi, z_{0},z}
+      \condition*{n\geq 0} ,
+   \end{dmath*}
+   and 
+   \begin{dmath*}
+      v_{n+1}'' (z) = - v_{n} (z) J(z) 
+      \condition*{n\geq 0} ,
+   \end{dmath*}
+   for every $z\in S$.
+
+   We shall show that
+   %\begin{dmath*}
+   $\sum_{n=0}^{+\infty} v_{n}(z) $
+   %\end{dmath*}
+   converges absolutely and uniformly in $S$ to a function $v(z)$ analytic in
+   $S$ and which satisfies  the
+   Eq.~\eqref{eq:ode}. Further, this function will satisfy the initial
+   conditions~\eqref{eq:icv(z)} for any complex $c_{0}$ and $c_{1}$,
+   provided that the parameters $a$ and $b$ in the definition of $v_{0}(z)$ have been properly tuned.
+   In order to prove these facts, we need a preliminary result, namely, we need to
+   show that the following inequality holds:
+   %\graffito{A preliminary result to show convergence of the series}
+   \begin{dmath}[label={vnbound}]
+      \Abs{v_{n}(z)} \leq \mu M^{n} \frac{ \Abs{ z-z_{0}}^{2n}}{n!}
+      \condition*{n\geq 0},
+   \end{dmath}
+   for every $z\in S$, where
+   %\begin{dgroup*}
+   \begin{dmath*}
+      \mu = \sup_{z\in S} \Abs{ v_{0}(z)} ,
+   \end{dmath*}
+   and
+   \begin{dmath*}
+      M = \sup_{z\in S} \Abs{J(z)} .
+   \end{dmath*}
+   (These  definitions make sense because both $v_{0}(z)$ and $J(z)$, being
+   analytic functions in $S$, are guaranteed to be 
+   bounded in $S$.)
+   %\end{dgroup*}
+   The rigorous proof of~\eqref{eq:vnbound} is by induction on $n$.
+   In fact,
+   for $n=0$, we have
+   \begin{dmath*}
+      \Abs{v_{0}(z)} \leq \mu ,
+   \end{dmath*}
+   for every $z\in S$, which is obviously verified. 
+   Suppose now the validity of Eq.~\eqref{eq:vnbound} for some $n$ and let us
+   prove that a similar relation holds for $n+1$.
+   By definition,
+   \begin{dmath*}
+      \Abs{v_{n+1}(z)} = \Abs{ \Int{\left( \xi -z \right) v_{n}(\xi)
+	    J(\xi)}{\xi, z_{0},z} }.
+   \end{dmath*}
+   We have already said that the value of this integral must be the same  no matter
+   the contour of integration is chosen. Integrating along the straight line
+   joining  $z_{0}$ to $z$, with parametric equation
+   \begin{dmath*}
+      \xi(t) = z_{0} + (z-z_{0}) t \condition*{t\in[0,1]} ,
+   \end{dmath*}
+   we have $\xi'(t) = z-z_{0}$ and
+   \begin{dmath*}[compact]
+      \xi(t)  -z  = z_{0} + \left( z- z_{0} \right) t - z = \left( z-z_{0} \right)
+      (t-1) ,
+   \end{dmath*}
+   thus
+   \begin{dmath*}[compact]
+      \Int{(\xi-z) v_{n}(\xi) J(\xi)}{\xi, z_{0},z}
+      %= \int_{0}^{1} \left[ z_{0} + \left( z-z_{0} \right)t - z \right]  v_{n} (\xi(t)) J(\xi(t))  (z-z_{0}) \udiff{t} 
+      = \left( z-z_{0} \right)^{2} 
+      \Int{(t-1) v_{n} (\xi(t)) J(\xi(t))}{t,0,1},
+   \end{dmath*}
+   and its modulus becomes 
+   \begin{dmath*}
+      \Abs{\Int{(\xi-z) v_{n}(\xi) J(\xi)}{\xi,z_{0},z}} 
+      = 
+      \Abs{ z-z_{0} }^{2} \Abs{ \Int{(t-1) v_{n} (\xi(t)) J(\xi(t))}{t,0,1}}
+      \leq 
+      \Abs{ z-z_{0}}^{2} \Int{\Abs{t-1} \Abs{ v_{n}(\xi(t))}
+	 \Abs{J(\xi(t))} }{t,0,1} 
+      \leq\Abs{ z-z_{0}}^{2n+2} \mu \frac{M^{n+1}}{n!} \Int{(1-t)}{t,0,1}
+      \leq\Abs{ z-z_{0}}^{2n+2} \mu \frac{M^{n+1}}{n!} \Int{(1-t) t^{2n}}{t,0,1}
+      =\Abs{ z-z_{0}}^{2n+2} \mu \frac{M^{n+1}}{(n+1)!} \Int{(1-t)}{t,0,1}
+   \end{dmath*}
+   Since $\Abs{z-z_{0}} <\rho$ where $\rho$ is the radius of $S$, we get
+   \begin{dmath*}
+      \Abs{v_{n}(z)} \leq \frac{1}{n!} \mu M^{n} \rho^{2n}.
+   \end{dmath*}
+   Now, the numerical series 
+   $\sum_{n=0}^{+\infty} \frac{1}{n!} \mu  M^{n} \rho^{2n} $
+   is convergent, for its general term is that of the power series expansion of the
+   exponential function, so the sum of this series can be written explicitly:
+   $\sum_{n=0}^{+\infty} \frac{1}{n!} \mu  M^{n} \rho^{2n} = 
+   \mu \E^{M\rho^{2}}$.
+   %\footnote{You can use for example the ratio test, but the best way to prove the
+   %convergence it of course to notice that its sum is explicitly given by $\mu
+   %\uexp^{ MR^{2}}$! It is nothing but the exponential series. }
+   It follows that the series of functions $\sum_{n=0}^{+\infty} v_{n}(z)$
+   is \emph{absolutely} convergent in  $S$ by Cauchy criterion, furthermore  the M-test of Weierstrass ensures that the
+   series is also \emph{uniformly} convergent in $S$.
+   Let us denote its sum with
+   \begin{dmath*}
+      v(z) = \sum_{n=0}^{+\infty} v_{n}(z) .
+   \end{dmath*}
+   According to the theorem  of Weierstrass on the analiticity of the uniform limit
+   of a sequence of analytic functions,
+   %\footnote{Let $H(\Omega)$ be the set of all and only those complex-valued
+   %functions $f:\Omega \rightarrow \C$ which are analytic on $\Omega$.
+   %Then, any sequence $(f_{n})_{n\in\N}$ of analytic functions on $\Omega$ which is
+   %uniformly convergent to $f$ on $\Omega$    implies $f\in H(\Omega)$.}
+   $v(z)$ is analytic in $S$.
+
+   The last step 
+   \graffito{Last step: check that $v(z)$ is a solution}
+   it to show that such $v(z)$ actually satisfies
+   Eq.~\eqref{eq:odev(z)}.
+   Since the series $\sum_{n=0}^{+\infty} v_{n}(z)$ converges uniformly on $S$, 
+   we can differentiate it term by term to get
+   \begin{dmath*}
+      v'(z) = b + \sum_{n=1}^{+\infty} v_{n}'(z) ,
+   \end{dmath*}
+   and 
+   \begin{dmath*}
+      v''(z) = \sum_{n=0}^{+\infty} v_{n}''(z) ,
+   \end{dmath*}
+   for every $z\in S$.
+   Using the previously derived formula for $v_{n}''(z)$, we finally get
+   \begin{dmath*}[compact]
+      v''(z) = - J(z) \sum_{n=0}^{+\infty}  v_{n-1}(z) = -J(z) \sum_{n=0}^{+\infty}
+      v_{n}(z) = - J(z) v(z) ,
+   \end{dmath*}
+   which shows that $v(z)$ satisfies Eq.~\eqref{eq:odev(z)}.
+
+   Obviously, 
+   $v(z_{0})=a$ and $v'(z_{0}) = b$. By choosing $a=c_{0}$ and $b=c_{1}$, 
+   $v(z)$ satisfies the given initial  
+   conditions~\eqref{eq:icv(z)}. The fact that $v(z)$ is also single-valued follows
+   from the fact that $S$ is a simple connected domain.
+
+   Let us now address 
+   \graffito{Uniqueness}
+   the problem of proving  the uniqueness of the solution of
+   Eq.~\eqref{eq:odev(z)} satisfying the initial conditions~\eqref{eq:icv(z)}.
+   Let $\tilde{v}(z)$ be another such solution and 
+   \begin{dmath*}
+      w (z) = \tilde{v}(z)  - v(z) ,
+   \end{dmath*}
+   for every $z\in S$.
+   Also $w(z)$ is analytic and single-valued on $S$ and 
+   we can easily see by direct computation of its first and second order
+   derivatives that it satisfies the same equation of $v(z)$ and
+   $\tilde{v}(z)$, \ie,
+   \begin{dmath*}
+      w''(z) + J(z) w(z) = 0,
+   \end{dmath*}
+   with the initial conditions $w(z_{0}) = w'(z_{0}) =0$.  By repeated
+   differentiation, 
+   \begin{dmath*}[compact]
+      w'''(z_{0}) = - J'(z_{0}) w(z_{0} ) - J(z_{0}) w'(z_{0} ) = 0,
+   \end{dmath*}
+   and analogously  we get the general result that $w^{(n)}(z_{0})=0 $ for every
+   $n$, \ie,  the derivatives of $w$ of any order vanish at the $z_{0}$.  By
+   Taylor's theorem, $w(z)$ is identically zero in $S$, \ie, $v(z) = \tilde{v}(z)$
+   for every $z\in S$. 
+\end{proof}
+
+Some remarks are in order. \graffito{Are there non-analytic solutions?} First of all,
+there still remains the question as to wheater or not there might exist
+\emph{non-analytic} solutions of Eq.~\eqref{eq:ode} which satisfy the same
+initial conditions~\eqref{eq:ic}, since in the proof of the uniqueness we have
+made heavy use of analyticity.  (Of course, if there were such non-analytic
+solutions they should be twice differentiable in order to satisfy the
+equation.) This question has beeen completely answered in the negative, but we
+do not enter the details here.  For further  details, we invite the Reader to
+consult the book of \textcite{Ince:1956} and references therein.
+
+The series $\sum_{n=0}^{+\infty} v_{n}(z)$ is not in \graffito{Taylor expansion
+   of the solution} general a power series.  However, its sum defines a function
+$v(z)$ which, as we have seen, is \emph{analytic} in $S$. This means that we can
+Taylor expand $v(z)$ and the Taylor series will be convergent within $S$, and
+perhaps also in a larger circle,%
+\footnote{As we shall discuss in a deeper way in the \S~\ref{sec:many-valuedness}, the
+   singularities of the coefficients of the differential equation need \emph{not}
+   in general to
+   be singular points also of the integrals of the differential equation.}
+and
+the same is true also for $u(z)$.
+In principle, one
+can determine $u(z)$ by constructing explicitly the sequence $v_{n}(z)$,
+then evaluating in closed form the sum of the series and using $u(z) =k(z) v(z)$ where $k(z)$ is
+given by Eq.~\eqref{eq:k(z)}. In practise, it would
+become hard or impossible to perform in closed form all steps of such computation.  But now that we know
+that one and only one solution $u(z)$ of Eq.~\eqref{eq:ode} exists and is
+\emph{analytic}  in $S$, we can find it by directly 
+looking for its  series representation with center  at $z_{0}$:
+\begin{dmath*}
+   u(z) =  \sum_{n=0}^{+\infty} A_{n} (z-z_{0})^{n} .
+\end{dmath*}
+A priori, we know that  the series will be convergent \emph{at least} within
+$S$.  The parameters $A_{0}$ and $A_{1}$ will be  fixed by the initial
+conditions~\eqref{eq:ic}, in fact $u(z_{0}) = A_{0}$ and $u'(z_{0}) = A_{1}$;
+the other coefficients are found by plugging the above series representation
+into Eq.~\eqref{eq:ode} and equating the coefficients of successive powers of
+$(z-z_{0})$ to zero.  The power series represenations of the first  and second
+order derivatives of $u(z)$ are simply obtained by differentiating the above sum
+term by term, since the series is a priori guaranteed to converge uniformly
+within $S$.  Notice that in pluggin the series expansions  in the differential equation, it might be easier to work
+directly with the differential equation cleared of fractions, without having to
+reduce it to the standard form Eq.~\eqref{eq:ode} in which the coefficient of
+the second-order derivative has been put equal to one. The standard form
+Eq.~\eqref{eq:ode} is not always the best one to work with at a practical level,
+but it is quite adeguate for theoretical manipulations.
+
+Finally, \graffito{The a priori knowledge of the disk $S$} notice that the results of the
+theorem of this section hold only locally, \ie, in the  neighbourhood $S$ of
+$z_{0}$.  But $S$ is known \emph{a priori}, \ie, it does not depend on the
+initial conditions and therefore it is the same for \emph{all} the integrals of
+Eq.~\eqref{eq:ode} about the ordinary point $z_{0}$.  In this case we speak of
+\emph{fixed} singularities.
+
+
+
+
+For 
+\graffito{Movable singularities may occur
+   in the case of non-linear equations}
+\emph{non-linear} equations, it may happen that the disk of convergence depends on
+the initial conditions. Consider for instance the first-order
+homogeneus non-linear differential equation
+\begin{dmath*}
+   u'(z) + u^{2}(z) = 0,
+\end{dmath*}
+whose non identically-zero general integral is given by
+\begin{dmath*}
+   u(z) = \frac{1}{z - c} ,
+\end{dmath*}
+where the arbitrary constant of integration $c$  has to be fixed by imposing
+initial conditions at some point $z_{0}$:
+\begin{dmath*}
+   u(z_{0}) = \alpha ,
+\end{dmath*}
+with $\alpha \neq 0$.
+(If $\alpha =0$, the solution would be $u(z) =0$ everywhere.)
+By direct substitution we get
+$c = z_{0} - \frac{1}{\alpha} $,  so
+\begin{dmath*}
+   u(z) = \frac{1}{(z-z_{0}) + \frac{1}{\alpha}} .
+\end{dmath*}
+There is always a disk of non-zero radius with center at $z_{0}$ in which this
+function is analytic and single-valued and has no singular points.  However, the
+position of its singularity depends on the initial condition, for in fact $u(z)$
+has an isolated singular point when $z=z_{0} - \frac{1}{\alpha}$, which can be
+made closer and closer to $z_{0}$ and which cannot be located a priori.  In this
+case, one speaks of  ``movable'' singularities.
+
+
+%The example of 
+
+\section{The Wronskian}
+
+In order to make the presentation as self contained as possible, it seeems
+useful to briefly  review 
+some material concerning the ``Wronskian'' of two integrals of the differential
+equation. 
+%This section is mostly taken from \textcite{Sansone.Gerretsen:1969}.
+
+
+%Recall \graffito{Linear independence of vectors} from linear algebra that if $V$ denotes some vector space over the field
+%of complex numbers $\C$, then two elements $\vec{u}$ and $\vec{v}$ are defined
+%to be ``linearly \emph{in}dependent'' if  the  linear combination
+%\begin{dmath*}
+%\vec{w} = 
+%\alpha \vec{u} + \beta\vec{v} 
+%\end{dmath*} with complex coefficients 
+%$\alpha$ and $\beta$, is zero \emph{if and only if} 
+%$\alpha = \beta =0$. 
+%Otherwise, the two vectors are said to be ``linearly dependent'', which means
+%that  there exist $\alpha$ and $\beta$, with $\alpha $ and $\beta$ \emph{not}
+%both zero,  such that  
+%$\vec{w}=\vec{0}$. (Here, $\vec{0}$ denotes the null vector, while $0$ denotes
+%the number zero in $\C$.)
+
+As usual, \graffito{Linear independence of two analytic functions} we define two
+functions $w_{1}$ and $w_{2}$, defined and
+analytic in the same domain $\Omega$, to be  ``linearly \emph{in}dependent'' if the linear
+combination
+\begin{dmath}[label={li}]
+   w(z) = \alpha w_{1}(z) + \beta w_{2}(z) 
+   \condition*{\forall z\in \Omega}
+\end{dmath},
+where $\alpha$ and $\beta$ are complex numbers, vanishes identically  in
+$\Omega$ \emph{if and only if} $\alpha = \beta =0 $. 
+Otherwise, $w_{1}$ and $w_{2}$ are said to be ``linearly dependent'', which means
+that it is possible to find $\alpha$ and $\beta$ such that 
+\begin{dmath*}
+   \alpha w_{1}(z) + \beta w_{2}(z)  =0
+\end{dmath*}
+identically and at least one of the two complex numbers $\alpha$ and $\beta$ is
+different from zero.
+(It is nothing more than
+the usual notion of linear independence in linear algebra.)
+
+
+Let \graffito{Definition of the Wronskian} us introduce the ``Wronski
+determinant'' or ``Wronskian'' of $w_{1}$ and
+$w_{2}$; it is defined by
+\begin{dmath*}[compact]
+   W_{w_{1}, w_{2}} (z) = 
+   \det \begin{pmatrix}
+      w_{1} (z) & w_{2} (z) \\
+      w_{1}'(z) & w_{2}'(z) 
+   \end{pmatrix} 
+   = w_{1}(z) w_{2}'(z) -w_{1}'(z) w_{2}(z) 
+\end{dmath*}.
+Notice that it is  is a function of $z\in\Omega$.
+
+The Wronskian is useful  to test linear independence.
+In fact, we have the following theorems.
+
+\begin{theorem}
+   If $w_{1}$ and $w_{2}$ are linearly dependent, then $W_{w_{1}, w_{2}}$ vanishes
+   identically.
+\end{theorem}
+
+\begin{proof}
+   Differentiation of Eq.~\eqref{eq:li} yields
+   \begin{dmath*}
+      w'(z) = \alpha w_{1}'(z) + \beta w_{2}'(z) 
+   \end{dmath*}.
+   By hypothesis, 
+   $w_{1}$ and $w_{2}$ are linearly dependent, thus
+   $w(z)$ is identically zero.
+   Since $w(z)$ is constant in $\Omega$, $w'(z) = 0$ for all $z\in\Omega$.
+   In matrix form, 
+   \begin{dmath*}
+      \begin{pmatrix} 
+	 w_{1}(z) & w_{2} (z) \\
+	 w_{1}'(z) & w_{2}'(z)
+      \end{pmatrix}
+      \begin{pmatrix}
+	 \alpha \\ \beta 
+      \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix}
+   \end{dmath*}.
+   This system of equations is homogeneus, thus $\alpha = \beta =0$ is a solution.
+   Since by hypothesis, 
+\end{proof}
+
+The converse of the previous theorem is in general \emph{not} true, \ie, it
+might happen that the Wronskian of $w_{1}$ and $w_{2}$ is zero \emph{and}
+$w_{1}$ and $w_{2}$ are linearly \emph{in}dependent  in their domain of
+definition.
+
+\begin{approfondimento}
+   Let us consider an example with differentiable functions of a real variable.
+   Let $f_{1}, f_{2} : \R\rightarrow \R
+   $ be defined by 
+   \begin{dgroup*}
+      \begin{dmath*}
+	 f_{1}(t) = t^{2}
+      \end{dmath*}
+      \begin{dsuspend}
+	 and
+      \end{dsuspend}
+      \begin{dmath*}
+	 f_{2}(t) = t\Abs{t}
+      \end{dmath*},
+   \end{dgroup*}
+   for every $t\in\R$. The two functions are differentiable and linearly
+   \emph{in}dependent on $\R$, for  
+   there exists no $\lambda \in\R$ such that $f_{1}(t) =
+   \lambda f_{2}(t)$ for every $t\in\R$.
+   But their  Wronskian is identically zero for all $t\in\R$. 
+\end{approfondimento}
+
+\section{Many-valuedness and singularities of the solutions}
+%{Investigation of
+%the many-valuedness and singularities of the solutions}
+\label{sec:many-valuedness}
+
+\subsection{Analytic continuation of the solution}
+
+We stress once again that the theorem of \S~\ref{sec:existence} is a
+\emph{local} result, in the sense that corresponding to every ordinary point
+$z_{0}$ of the Eq.~\eqref{eq:ode} a solution  of Eq.~\eqref{eq:ode} satisfying
+the initial conditions~\eqref{eq:ic} for arbitrarily-assigned complex values of
+$\alpha$ and $\beta$ must exist in $S$ and therein is guaranteed to be  uniquely
+determined, analytic and single-valued.  However, the theorem of
+\S~\ref{sec:existence} gives no information regarding the behavior of the
+solution at points of $\Omega$ away from $S$.  In other words, the result only
+applies to a neighbourhood of the ordinary point $z_{0}$.
+
+By the \graffito{Analytic continuation of the solution} general process of
+analytic continuation, the series representing the solution in $S$ can be
+analytically-continued  at all points of $\Omega$ with the exception of those
+which are singular points of the coefficients of the equation.  The actual
+implementation of this procedure is explain in some detail in figure.
+
+\begin{theorem}
+   The analytic continuation of a solution of Eq.~\eqref{eq:ode} is also a solution
+   of Eq.~\eqref{eq:ode}.
+\end{theorem}
+
+\begin{proof}
+
+   Suppose $w(z)$ is a solution of Eq.~\eqref{eq:ode} in the circle $\Abs{ z
+      -z_{0}} \leq \rho$ and let $w^{*} (z)$ be the analytic continuation of $w(z)$ in
+   some other circle $\Abs{ z-z_{0}}\leq \tilde{\rho}$ sharing a region $G$ with
+   the previous. Consider function 
+   \begin{dmath*}
+      F(z) = w''(z) + p(z) w'(z) + q(z) w(z) ,
+   \end{dmath*}
+
+\end{proof}
+
+Therefore, \graffito{The a priori knowledge of the possible singular points of
+   the integrals of a linear differential equation} we have obtained a solution of
+Eq.~\eqref{eq:ode} satisfying the initial conditions~\eqref{eq:ic} for every
+complex $\alpha$ and $\beta$, which is \emph{analytic} at \emph{all} points of
+$\Omega$ except, eventually, those points of $\Omega$ which are singular points
+of the coefficients of the equation. The construction does not work for those
+points, but this does not mean that the series representing the solution cannot
+converge also at those points. In general, the singular points of the
+coefficients \emph{may} be singular points of \emph{some} integrals of the
+equation.  But any integral of Eq.~\eqref{eq:ode} cannot have singularieties at
+points of $\Omega$ other than those which are singular points of the
+coefficients.
+
+Although any integral of Eq.~\eqref{eq:ode} is guaranteed to be \emph{analytic}
+in $\Omega$ except at (perhaps) the singularities (if any) of the coefficients
+of the equation, the key point is that in general these integrals need not to be
+\emph{single-valued} throughout $\Omega$ even though the coefficients of the
+equation are supposed to be single-valued.  We shall now turn to investigate
+this problem.
+
+
+\subsection{Local solutions near a singular point}
+
+The main result of this section can be summarized  in the following theorem.
+
+\begin{theorem}
+   Let $z_{0} \in \Omega$ be a \emph{singular} point of eq.~\eqref{eq:ode}.
+   Let $S$ be the annulus with center at $z_{0}$ and non-zero radius in which
+   the Laurent series of 
+   $p(z)$ and $q(z)$ about $z_{0}$ are convergent.
+   Two cases are possible:
+   \begin{aenumerate}
+   \item There exist two 
+   linearly \emph{in}dependent integrals of eq.~\eqref{eq:ode}  which are given by
+   \begin{dmath*}
+      w_{1} (z) = (z-z_{0})^{\rho_{1}} \phi_{1}(z)
+   \end{dmath*},
+   and 
+   \begin{dmath*}
+      w_{2} (z) = (z-z_{0})^{\rho_{2}} \phi_{2}(z)
+   \end{dmath*},
+   where $\rho_{1}$ and $\rho_{2}$ are complex numbers such that
+   $\rho_{1}-\rho_{2}\notin\Z$ and $\phi_{1}$ and $\phi_{2}$ are analytic in
+   the annulus $S$.
+   \item
+   There exist two linearly \emph{in}dependent  
+   integrals of eq.~\eqref{eq:ode}, one is again given by 
+   \begin{dmath*}
+      w_{1} (z) = (z-z_{0})^{\rho_{1}} \phi_{1}(z)
+   \end{dmath*},
+   while the other is given by
+      \begin{dmath*}
+	 w_{2} (z) = w_{1}(z) \left[ A \log (z-z_{0}) + \psi(z) \right]
+      \end{dmath*},
+      where $A\in \C$ and $\psi(z)$ is  analytic in the annulus $S$. 
+   \end{aenumerate}
+   $\rho_{1}$, $\rho_{2}$ are the solutions of the so-called ``foundamental
+   equation'' associated with eq.~\eqref{eq:ode} and the singular point $z_{0}$.
+\end{theorem}
+
+
+Let $z_{0}\in\Omega$ be a singular point of the coefficients of the
+eq.~\eqref{eq:ode} and $\sigma$ be any neighbourhood of $z_{0}$ all of whose
+points are ordinary points of Eq.~\eqref{eq:ode}, \eg, $\sigma$ can be the disk
+with centre at $z_{0}$ and having non-zero radius.  The fact that such
+neighbourhood always exists follows from  the previous hypothesis that $\Omega$
+is an open set and the singularities of the coefficients are isolated.  Further,
+let $b$ any ordinary point of $\sigma$  and $\Gamma$ any simple closed contour,
+beginning and ending at $b$, which lies completely within $\sigma$ (\ie, not
+passing through any singularity of the equation and such that there is no
+singularity of the equation other than $z_{0}$ in its interior) and which
+encircles exactly once in the positive direction (with respect to the area
+enclosed by it) the singular point $z_{0}$.
+
+Consider two arbitrary linearly independent solutions $u_{1}(z)$ and $u_{2}(z)$
+in the neighbourhood of $b$.  Their corresponding analytic continuations along
+$\Gamma$ will be denoted by $\tilde{u}_{1}$ and $\tilde{u}_{2}$.
+
+Since the coefficients $p(z)$ and $q(z)$ are left unaltered by the description
+of $\Gamma$ (because they are single-valued), by the previous theorem of this
+section we get that at all stages of the analytic continuation along $\Gamma$
+the Eq.~\eqref{eq:ode} remains identically fulfilled, in particular, also
+$\tilde{u}_{1} $ and $\tilde{u}_{2}$ are solutions of Eq.~\eqref{eq:ode}.
+
+Further, the analytic continuations of two linearly independent solutions are
+linearly independent solutions.
+This can be easily seen by considering the complex analogous of the so-called
+Abel's formula (or also Liouville's formula) for the Wronski determinant.
+
+
+The Wronski determinant
+\graffito{Wronski determinant} (the so-called Wronskian) of any two
+differentiable functions
+$u_{1}(z)$ and $u_{2}(z)$ is defined by 
+\begin{dmath}[label={wronskian},compact]
+   W[u_{1}, u_{2}](z) = \det \begin{pmatrix} 
+      u_{1} (z) & u_{2}(z) \\
+      u_{1}'(z) & u_{2}'(z) \end{pmatrix}  .
+   %= u_{1}(z) u_{2}'(z) - u_{1}'(z) u_{2}(z) .
+\end{dmath}
+Notice that it is a function of $z$. The Wronski determinant is useful
+to test linear independence. In fact,
+if $u_{1}$ and $u_{2}$ are 
+\graffito{Sufficient condition for linear dependence}
+linearly dependent, this means that there must exist some complex constant $\lambda$
+such that $u_{1}(z) = \lambda
+u_{2}(z)$, then $u'_{1} (z) = \lambda u'_{2} (z)$ and
+the Wronskian  is
+identically zero in its domain of definition.
+The
+converse in general is not true,
+%\footcite[See, \eg,][]{Bocher:1900}
+but for analytic functions identical vanishing
+of the Wronskian implies the linear dependence of the functions.
+
+
+%\begin{dmath*}
+%f_{1}'(t) = 2t 
+%\end{dmath*}
+%and
+%
+For the Wronski determinant of integrals of a linear differential equation, it
+is easy to prove a formula known as Abel or Liouville formula which gives (up to
+a constant) the value of the Wronskian for any two integrals only from the
+knowledge of the differential equation!
+Let us now derive this formula.
+Suppose that $u_{1}(z)$ and $u_{2}(z)$ are solutions of
+Eq.~\eqref{eq:ode} in some domain. 
+Then
+\begin{dmath*}
+   u_{1} ''(z) + p(z) u_{1} '(z) + q(z) u_{1}(z) =0 ,
+\end{dmath*}
+and 
+\begin{dmath*}
+   u_{2} ''(z) + p(z) u_{2} '(z) + q(z) u_{2}(z) =0 .
+\end{dmath*}
+Multiplying the first equation by $u_{2}(z)$ and  the second one by $u_{1}$ and
+subtractin one from the other we get 
+\begin{dmath}
+   W'[u_{1}, u_{2}](z) -p(z) W[u_{1},u_{2}](z) =0 ,
+\end{dmath}
+which is a linear homogeneus ordinary differential  equation of the first order
+for the Wronskian. (The first term on the left-hand side is the derivative in
+the complex sense of the Wronskian with respect to $z$, remember that
+$W[u_{1},u_{2}]$ is a function of $z$.)
+By integrating from $z_{0}$ to $z$ (assuming that the coefficient $p(z)$ is
+analytic) we get
+\graffito{Abel formula}
+\begin{dmath}
+   W[u_{1}, u_{2}](z) = 
+   W[u_{1}, u_{2}](z_{0}) \exp \left\{ - %\int_{z_{0}}^{z} p(\xi) \udiff{\xi}
+      \Int{p(\xi)}{\xi,z_{0},z}
+   \right\}.
+\end{dmath}
+This is the well-known Abel, or Lioville, formula for the Wronski determinant of
+integrals of Eq.~\eqref{eq:ode}.
+An analogous formula holds for linear equations of arbitrary 
+order, in that case the integral of $p(\xi)$ has to be replaced by the
+coefficient of the derivative of the $(n-1)$\ordth. This formula also holds in
+the real case and  indeed it is easier  to derive it  in the real case
+(since you have not to worry as weather or not it is necessary to prescribe some
+contour of
+integration, etc, as it happens in the complex case).
+
+Therefore, there must exist four complex constants $\alpha$, $\beta$, $\gamma$,
+$\delta$ such that 
+\begin{dmath*}
+   \tilde{u}_{1}(z) =  \alpha u_{1}(z) + \beta u_{2}(z), 
+\end{dmath*}
+and 
+\begin{dmath*}
+   \tilde{u}_{2}(z) =  \gamma u_{1}(z) + \delta  u_{2}(z), 
+\end{dmath*}
+with
+\begin{dmath*}
+   \det \begin{pmatrix} \alpha & \beta \\ \gamma & \delta \end{pmatrix} \neq 0 ,
+\end{dmath*}
+otherwise $\tilde{u}_{1}$ and $\tilde{u}_{2}$ would be linearly dependent, in
+contrast with the earlier hypothesis that $u_{1}$ and $u_{2}$ are chosen
+linearly \emph{in}dependent.
+
+It can be shown, see \textcite{Tricomi:1961}, that the constants $\alpha$,
+$\beta$, $\gamma$, $\delta$ depend in general on the choice of the linearly
+independent integrals $u_{1}$ and  $u_{2}$ but not on the particular contour
+$\Gamma$ considered.
+
+
+Among all integrals of Eq.~\eqref{eq:ode}, we look for integrals $w(z)$ which
+undergo the simplest of all possible linear transformation on  describing the contour $\Gamma$,
+namely,
+\begin{dmath}[label={lambda}]
+   \tilde{w}(z) = \lambda w(z) ,
+\end{dmath}
+for some complex $\lambda$, where $\tilde{w}$ denotes the integral obtained by
+analytically continuing $w$ along $\Gamma$.
+Clearly, not all integrals of Eq.~\eqref{eq:ode} are of this type. 
+If there were solutions of Eq.~\eqref{eq:ode} of this form, then it would be
+possible to express them as a linear combination of $u_{1}$ and $u_{2}$, at
+least locally, \ie, there must exist complex coefficients
+$k_{1}$ and $k_{2}$ such that 
+\begin{dmath*}
+   w(z) = k_{1} u_{1}(z) + k_{2} u_{2}(z) .
+\end{dmath*}
+Since the analytic continuation of a linear combination of functions is the
+linear combinations of the analytic continued functions, we get 
+\begin{dmath*}
+   \tilde{w}(z) = k_{1} ( \alpha u_{1} (z) + \beta u_{2} (z) ) + k_{2} ( \gamma
+   u_{1}(z) + \delta u_{2}(z) ) 
+   = \left( \alpha k_{1} + \gamma  k_{2} \right) u_{1} (z) + 
+   \left( \beta k_{1} + \delta k_{2} \right) u_{2}(z) .
+\end{dmath*}
+It follows that Eq.~\eqref{eq:lambda} is satisfied if and only if 
+\begin{dgroup}
+   \begin{dmath*}
+      k_{1} \alpha + k_{2} \gamma = \lambda k_{1} ,
+   \end{dmath*}
+   \begin{dmath*}
+      k_{1} \beta + k_{2} \delta = \lambda k_{2} ,
+   \end{dmath*}
+   \begin{dsuspend}
+      that is
+   \end{dsuspend}
+   \begin{dmath*}
+      k_{1} \left( \alpha -\lambda \right) + k_{2} \gamma = 0
+   \end{dmath*}
+   \begin{dmath*}
+      k_{1} \beta + k_{2} \left( \delta - \lambda \right) = 0 .
+   \end{dmath*}
+\end{dgroup}
+This system of two simulataneus homogeneus equation has a trivial solution
+$k_{1}= k_{2} = 0$ yielding a identically-zero integral $w$.
+We look for non trivial solutions.
+The system has non trivial solutions if 
+\begin{dmath}[label={ce}]
+   \det \begin{pmatrix} \alpha - \lambda & \gamma \\ \beta & \delta - \lambda
+   \end{pmatrix} = 0 .
+\end{dmath}
+Eq.~\eqref{eq:ce} is called ``characteristic'' or the ``foundamental''
+equation associated with the singular point $z_{0}$.
+It is a quadratic equation for $\lambda$ which has two \emph{non-zero}%
+\footnote{Their product is $\lambda_{1} \lambda_{2} = \alpha \delta - \beta
+   \gamma$, which must be non-zero by earlier considerations.}
+complex roots
+$\lambda_{1}$ and $\lambda_{2}$, which eventually may coincide.
+This equation restricts the possible values that $\lambda$ can have in
+Eq.~\eqref{eq:lambda}.
+
+It can be shown that while $\alpha$, $\beta$, $\gamma$ and $\delta$ depend on
+the choice of $u_{1}$ and $u_{2}$, the roots of the characteristic equation are
+independent of this choice and depend only on the coefficients of
+Eq.~\eqref{eq:ode} and on the point $z_{0}$.  The proof is simple but rather
+tedius, see, \eg, \textcite[\S~15.20]{Ince:1956}.  
+
+In the first place, 
+\graffito{Non-repeated roots} let us consider the case when the characteristic
+equation has two distinct roots, \ie, $\lambda_{1} \neq
+\lambda_{2}$.
+The system now reduce to only one equation which determines 
+the values of $k_{1}$ and $k_{2}$ and thus (apart from a
+factor of proportionaly) two integrals $w_{1}(z)$ and $w_{2}$ which
+satisfy Eq.~\eqref{eq:lambda} for $\lambda=\lambda_{1}$ and
+$\lambda=\lambda_{2}$ respectively.
+
+We shall prove now that $w_{1}$ and $w_{2}$ must be linearly \emph{in}dependent.
+Otherwise, the function $w_{1} / w_{2}$ would be a constant, but this is
+impossible since a constant would  not change on describing $\Gamma$ while
+$w_{1}/w_{2}$ acquires a factor $\lambda_{1} / \lambda_{2}$ in doing so.
+Therefore, we have found two linearly \emph{in}dependent  solutions $w_{1}$ and
+$w_{2}$ and we may work with them instead of using the original $u_{1}$ and
+$u_{2}$. The reason to prefer $w_{1}$ and $w_{2}$ is that, as we shall see in a
+while, they have a particular simple form.
+
+Consider the function $\left( z - z_{0} \right)^{\rho}$ which, on describing the
+contour $\Gamma$ becomes $\E^{2\pi i \rho } \left( z - z_{0} \right)^{\rho}$,
+\ie, acquires a multiplicative factor $\E^{ 2\pi i \rho}$ which in equal to
+one if and only if $\rho $ is an integer number.
+Suppose to select a $\rho_{1}$ so that 
+\begin{dmath*}
+   \E^{2\pi i \rho_{1} } = \lambda_{1} ,
+\end{dmath*}
+and analogously 
+\begin{dmath*}
+   \E^{2\pi i \rho_{2} } = \lambda_{2} ,
+\end{dmath*}
+which means that 
+\begin{dgroup*}
+   \begin{dmath*}
+      \rho_{1} =  \frac{1}{2\pi i } \Log \lambda_{1} 
+   \end{dmath*},
+   \begin{dmath*}
+      \rho_{2} =  \frac{1}{2\pi i } \Log \lambda_{2} 
+   \end{dmath*},
+\end{dgroup*}
+then the two functions
+\begin{dgroup}[label={phi}]
+   \begin{dmath}
+      \phi_{1}(z) = \frac{w_{1}(z)}{\left( z-z_{0} \right)^{\rho_{1}}} 
+   \end{dmath},
+   \begin{dmath}
+      \phi_{2}(z) = \frac{w_{2}(z)}{\left( z-z_{0} \right)^{\rho_{2}}} 
+   \end{dmath},
+\end{dgroup}
+remains single-valued on describing the singular point $z_{0}$.
+Thus, the two functions $\phi_{1,2}(z)$ are analytic and single-valued in a disk
+centered at $z_{0}$ (except the point $z_{0}$) and can thus be expanded in
+Lauren series.
+Thus, 
+\begin{dgroup}[label={phiseries}]
+   \begin{dmath}
+      w_{1}(z) = \left( z - z_{0} \right)^{\rho_{1}} \sum_{n \in \Z} a_{n} \left( z -
+	 z_{0} \right)^{n} 
+   \end{dmath},
+   \begin{dmath}
+      w_{2}(z) = \left( z - z_{0} \right)^{\rho_{2}} \sum_{n \in \Z} b_{n} \left( z -
+	 z_{0} \right)^{n} 
+   \end{dmath}.
+\end{dgroup}
+
+
+%\subsection{The a priori  knowledge of the singular points of the integrals of a
+%linear differential equation}
+
+
+
+%\section[Regular singular points]{Solution in the neighbourhood of a singular point. Regular singular
+%points}
+
+\section{Fuchs theorem}
+
+\begin{sidefigure}
+   \includegraphics[width=\marginparwidth]{Lazarus_Immanuel_Fuchs}
+   \caption{Lazarus Fuchs}
+\end{sidefigure}
+
+There is a necessary and sufficient criterion, due to L.~Fuchs, which enables us to establish  \emph{a priori} whether or not a singular point of
+Eq.~\eqref{eq:ode} is a Fuchsian singular point directly from the inspection  of
+the differential equation. This is the content of Fuchs' theorem. The proof of
+the theorem will lead us to a practical way to determine a foundamental system
+of solutions in a neighbourhood of a Fuchsian singular point.
+
+\begin{theorem}
+   A %\graffito{Fuchs' necessary and sufficient characterization of regular singular
+   %points} 
+   singular point 
+   $z_{0}\in \Omega$ is a Fuchsian singular point of Eq.~\eqref{eq:ode} \emph{if
+      and only if} 
+   \begin{itemize}
+      \item $p(z)$ has \emph{at most} a pole of the \emph{first} order at the point
+	 $z_{0}$ and
+      \item $q(z)$ has \emph{at most} a pole of the \emph{second} order at the point
+	 $z_{0}$;
+   \end{itemize}
+   \ie, \emph{if and only if}
+   $(z-z_{0}) p(z)$ and $(z-z_{0})^{2} q(z)$ are \emph{analytic} at the point
+   $z_{0}$.
+\end{theorem}
+
+%\begin{proof}
+
+\subsection{Proof of the necessity of Fuchs' conditions}
+
+
+Let us first establish the necessity of Fuchs' conditions.
+We shall need the following lemma.
+\begin{lemma}\label{lemma:classA}
+   Let 
+   \begin{dmath}[label={classA}]
+      f(z) = \left( z -z_{0} \right)^{\alpha} g (z) 
+   \end{dmath},
+   where $\alpha$ is \emph{any} complex number and $g(z)$ is analytic at $z_{0}$.
+   Then 
+   \begin{itemize}
+      \item 
+	 $\frac{f'(z)}{f(z)}$ has \emph{at most} a pole of the \emph{first} order at
+	 $z_{0}$;
+      \item $\frac{f''(z)}{f(z)}$ has \emph{at most} a pole of the
+	 \emph{second}
+	 order at $z_{0}$.
+   \end{itemize}
+\end{lemma}
+
+\begin{proof}
+
+   The case in which $g$ vanishes identically (and thus $f$) is trivial, so
+   let us assume that $g$ does not vanish identically.
+
+   \begin{approfondimento}
+      If $g(z_{0}) = 0$ and since $g$ is assumed to be not identically zero,
+      then there must exist $n\in\N$ such that
+      \begin{dmath*}
+	 g(z) = \left( z-z_{0} \right)^{n} \tilde{g} (z)  
+      \end{dmath*},
+      for every $z$ in a neighbourhood of $z_{0}$, 
+      $\tilde{g}$ being  
+      \emph{analytic} and different from zero in such
+      neighbourhood (including the point $z_{0}$), \ie, 
+      $g$ has a zero of ``order'' $n$ at $z_{0}$.
+   \end{approfondimento}
+
+
+   Let us suppose with great generality that $g$ has a zero of order $n\in\N$ at $z_{0}$.
+   (Eventually, $n=0$.)
+   Then, we may write
+   \begin{dmath*}
+      f(z) = \left( z- z_{0} \right)^{\alpha+n} \tilde{g} (z) 
+   \end{dmath*},
+   where $\tilde{g}(z) \neq 0$ in the neighbourhood of $z_{0}$.
+   By differentiating, we get
+   \begin{dgroup*}
+      \begin{dmath*}
+	 \frac{f'(z) }{f(z)} = \frac{\alpha + n}{z - z_{0} } + \frac{\tilde{g}'(z)}{g(z)} 
+      \end{dmath*}
+      \begin{dmath*}
+	 \frac{f''(z)}{f(z)} = \frac{(\alpha + n ) (\alpha + n - 1)}{\left( z-z_{0}
+	    \right)^{2} } + \frac{2 ( \alpha + n )}{z -z_{0} }
+	 \frac{\tilde{g}'(z)}{\tilde{g}(z)} +
+	 \frac{\tilde{g}''(z)}{\tilde{g}(z)}
+      \end{dmath*}.
+   \end{dgroup*}
+   Since $\tilde{g}$ never vanishes and $\tilde{g}'$ and $\tilde{g}''$
+   are analytic at $z_{0}$ (for
+   $\tilde{g}$ is analytic at $z_{0}$), we conclude that 
+   $\frac{f'(z)}{f(z)}$ has \emph{at most} a pole of the first order at
+   $z_{0}$,%
+   \footnote{%
+      We say at most
+      because it may happen that $\alpha + n =0 $.
+   } and
+   $\frac{f''(z)}{f(z)}$ has \emph{at most} a pole of the second order at
+   $z_{0}$.%
+   \footnote{%
+      We say at most because it may happen that either $\alpha + n =0 $ or $\alpha + n
+      -1=0$.
+   }
+\end{proof}
+
+\begin{remark}
+   Products, quotients and derivatives of functions of the
+   form~\eqref{eq:classA} are also  of the form~\eqref{eq:classA}.  Sums of
+   functions of the form~\eqref{eq:classA} in general are not of the
+   form~\eqref{eq:classA}, except in the special case in which the corresponding
+   indices $\alpha$ differ by an integer number.
+\end{remark}
+
+
+Our goal is to prove that if $z_{0}$ is a Fuchsian singular point of
+eq.~\eqref{eq:ode}, then $p(z)$ and $q(z)$ have,  at most, a pole of the first
+and second order at $z_{0}$, respectively.  In order to prove that, we write
+$p(z)$ and $q(z)$ in terms of $w_{1}(z)$ and $w_{2}(z)$.  We have
+\begin{dgroup*}
+   \begin{dmath}[label={nfuchs:p(z)}]
+      \Style{DDisplayFunc=outset}
+      p(z) = - \D{\log W_{w_{1}, w_{2}}(z)  }{z}
+      = -\D{\log  \left( w_{1}(z) w_{2}'(z) - w_{1}'(z) w_{2}(z) \right)}{z} 
+      = - \D{ \log w_{1}^{2} (z)  \left( \frac{ w_{1}(z) w_{2}'(z) - w_{1}'(z)
+	       w_{2}(z)}{w_{1}^{2}(z)} \right)}{z} 
+      = - \D{ \log \left\lbrace w_{1}^{2}(z) \D{ \left( \frac{w_{2}(z)}{w_{1}(z)}
+	    \right)}{z} \right\rbrace}{z} 
+      \Style{DDisplayFunc=inset}
+   \end{dmath},
+   \begin{dsuspend}
+      and 
+   \end{dsuspend}
+   \begin{dmath}[label={nfuchs:q(z)}]
+      q(z) = - \frac{w_{1}''(z)}{w_{1}(z)} - p(z) \frac{w'_{1}(z)}{w_{1}(z)} 
+   \end{dmath}.
+\end{dgroup*}
+
+
+
+We have to consider two cases. Let us first consider the case in which  
+$w_{1}(z)$ and $w_{2}(z)$ are of the
+form~\eqref{eq:classA} [see Eqs.~\eqref{eq:nfuchs:w(z)}] and so are
+\begin{dseries*}
+   \begin{math}
+      \frac{w_{2}(z)}{w_{1}(z)}
+   \end{math}, 
+   \begin{math}
+      \Style{DDisplayFunc=outset}
+      \D{\frac{w_{2}(z)}{w_{1}(z)}}{z}
+      \Style{DDisplayFunc=inset}
+   \end{math},
+   \begin{math}
+      \Style{DDisplayFunc=outset}
+      w_{1}^{2}(z) \D{\frac{w_{2}(z)}{w_{1}(z)}}{z}
+      \Style{DDisplayFunc=inset}
+   \end{math}
+\end{dseries*}
+and the logarithmic derivative of the last function is equal to $-p(z)$ and has
+at most a pole of the first order, which implies that $p(z)$ has at most a pole
+of the first order at $z_{0}$.
+
+What is about the logarithmic case, \ie, when $w_{2}$ is given by
+
+\subsection{Proof of the sufficiency  of the Fuchs' conditions}
+
+We now turn to prove that Fuchs' conditions are also sufficient.
+By hypothesis, the functions $P(z) = \left( z- z_{0} \right)p(z)  $ and
+$Q(z) = \left( z- z_{0} \right)^{2} q(z)$ are analytic at $z_{0}$ and therefore
+\begin{dgroup}
+   \begin{dmath}[label={P(z)}, compact]
+      P(z) =  \left( z- z_{0} \right) p(z) = \sum_{n=0}^{+\infty} p_{n} \left( z -
+	 z_{0} \right)^{n} 
+   \end{dmath},
+   \begin{dmath}[label={A(z)}, compact]
+      Q(z) =  \left( z- z_{0} \right)^{2} q(z) = \sum_{n=0}^{+\infty} q_{n} \left( z -
+	 z_{0} \right)^{n} 
+   \end{dmath}.
+\end{dgroup}
+Notice that we do not exclude the possibility that some of the leading
+coefficients in these two Taylor series expansions may be zero.
+
+We look for solutions of the form
+\begin{dmath}
+   w(z) = \left( z -z_{0} \right)^{\rho} \sum_{n=0}^{+\infty} w_{n} \left( z-z_{0}
+   \right)^{n} 
+\end{dmath},
+where $\rho$ and the coefficients $w_{n}$ (with $n\in\N$) are to be determined.
+We can always suppose that $w_{0} \neq 0$, for if $w_{0}$ were zero, we could in
+any case shift the series since $\rho$ is unknown.
+
+Let us write Eq.~\eqref{eq:ode} in the form
+\begin{dmath}[label={odeP}]
+   \left( z - z_{0} \right)^{2} w''(z) + \left( z - z_{0} \right) P(z) w'(z) + Q(z)
+   w(z) = 0
+\end{dmath}.
+The derivatives of $w(z)$ are 
+\begin{dgroup*}
+   \begin{dmath*}
+      w'(z) = \rho \left( z-z_{0} \right)^{\rho -1} \sum_{n=0}^{+\infty} w_{n} \left(
+	 z -z_{0} \right)^{n} + \left( z- z_{0} \right)^{\rho} \sum_{n=0}^{+\infty} n
+      w_{n} \left( z-z_{0} \right)^{n-1}
+   \end{dmath*},
+   \begin{dmath*}
+      w''(z) = \rho (\rho -1) \left( z-z_{0} \right)^{\rho -2} \sum_{n=0}^{+\infty} w_{n} \left(
+	 z -z_{0} \right)^{n} + 
+      2 \rho \left( z-z_{0} \right)^{\rho -1} \sum_{n=0}^{+\infty} nw_{n} \left(
+	 z-z_{0} \right)^{n-1} 
+      + \left( z- z_{0} \right)^{\rho} \sum_{n=0}^{+\infty} n (n-1) 
+      w_{n} \left( z-z_{0} \right)^{n-2}
+   \end{dmath*}.
+\end{dgroup*}
+Moreover, by Cauchy formula for multiplying two absolutely convergent series%
+\footnote{Namely, \begin{math}
+      \left( \sum_{n=0}^{+\infty} a_{n} \right) 
+      \left( \sum_{n'=0}^{+\infty} b_{n'}  \right) = \sum_{n=0}^{+\infty}
+      c_{n}\end{math}, where \begin{math} c_{n} = \sum_{k=0}^{n} a_{k} b_{n-k}
+   \end{math}.}
+we get
+\begin{dgroup*}
+   \begin{dmath*}
+      \sum_{n=0}^{+\infty} p_{n} \left( z-z_{0} \right)^{n} \sum_{n'=0}^{+\infty}
+      w_{n'} \left( z-z_{0} \right)^{n'} 
+      = \sum_{n=0}^{+\infty} \sum_{j=0}^{n}  w_{j} p_{n-j} \left( z-z_{0} \right)^{j+
+	 n-j} 
+      = \sum_{n=0}^{+\infty} \left[  \left( z-z_{0} \right)^{n} \sum_{j=0}^{n}  w_{j}
+	 p_{n-j} \right] 
+   \end{dmath*},
+   \begin{dmath*}
+      \sum_{n=0}^{+\infty} p_{n} \left( z-z_{0} \right)^{n} \sum_{n'=0}^{+\infty} n'
+      w_{n'} \left( z-z_{0} \right)^{n'-1} 
+      = \sum_{n=0}^{+\infty} \sum_{j=0}^{n}  w_{j} p_{n-j} \left( z-z_{0} \right)^{j+
+	 n-j} 
+      = \sum_{n=0}^{+\infty} \left[  \left( z-z_{0} \right)^{n} \sum_{j=0}^{n}  w_{j}
+	 p_{n-j} \right] 
+   \end{dmath*},
+\end{dgroup*}
+Plugging into Eq.~\eqref{eq:odeP},
+\begin{dmath}
+   \rho (\rho -1) \left( z-z_{0}\right)^{\rho} \sum_{n=0}^{+\infty} w_{n} \left(
+      z-z_{0} \right)^{k} + 
+   2\rho \left( z-z_{0} \right)^{\rho} \sum_{n=0}^{+\infty} n w_{n} \left( z-z_{0}
+   \right)^{n} 
+   + \left( z-z_{0} \right)^{\rho} \sum_{n=0}^{+\infty} n (n-1) w_{n} \left(
+      z-z_{0} \right)^{n} +
+   \rho \left( z-z_{0} \right)^{\rho} \sum_{n=0}^{+\infty} \left( z-z_{0}
+   \right)^{n} \sum_{j=0}^{n} w_{j} p_{n-j} 
+   + \left(z-z_{0}  \right)^{\rho} \sum_{n=0}^{+\infty} \left( z-z_{0} \right)^{n}
+   \sum_{j=0}^{n} w_{j} j p_{n-j} + 
+   \left( z-z_{0} \right)^{\rho} \sum_{n=0}^{+\infty} \left( z-z_{0} \right)^{n}
+   \sum_{j=0}^{n} w_{j} q_{n-j} = 0
+\end{dmath},
+from which it follows 
+\begin{dmath*}
+   \sum_{n=0}^{+\infty} \left\lbrace 
+   \left[ \rho (\rho-1)  + 2\rho n + n (n-1) \right] w_{n} +
+   \sum_{j=0}^{n} \left[ (\rho + j) p_{n-j} + q_{n-j} \right] w_{j}  \right\rbrace
+   \left( z-z_{0} \right)^{n+\rho} = 0
+\end{dmath*}.
+Notice that 
+\begin{dmath*}
+   \rho (\rho -1) + 2\rho n + n (n-1) = 
+   \rho^{2} + \rho ( 2n -1) + n(n-1) = (\rho + n) (\rho + n -1) 
+\end{dmath*}.
+Therefore, 
+\begin{dmath*}
+   \sum_{n=0}^{+\infty} \left\lbrace 
+   ( \rho + n ) (\rho + n -1) w_{n} +
+   \sum_{j=0}^{n} \left[ (\rho + j) p_{n-j} + q_{n-j} \right] w_{j}  \right\rbrace
+   \left( z-z_{0} \right)^{n+\rho} = 0
+\end{dmath*}.
+The coefficients must be zero, so 
+\begin{dmath}
+   ( \rho + n ) (\rho + n -1) w_{n} +
+   \sum_{j=0}^{n} \left[ (\rho + j) p_{n-j} + q_{n-j} \right] w_{j}   =0 
+\end{dmath}.
+This is a system of infinitely many homogeneus linear coupled recursive
+relations  involving one additional unknown parameter, which is $\rho$.
+
+First of all, it is useful to simplify the notations. We set
+\begin{dgroup*}
+   \begin{dmath*}
+      \lambda_{0} (\xi) = \xi (\xi-1) + p_{0} \xi + q_{0} 
+      = \xi^{2} + \xi (p_{0} -1) + q_{0} 
+   \end{dmath*}
+   \begin{dsuspend}
+      and
+   \end{dsuspend}
+   \begin{dmath*}
+      \lambda_{n} (\xi) = p_{n} \xi + q_{n} \condition*{n\in\N\backslash\lbrace
+	 0\rbrace}
+   \end{dmath*}
+\end{dgroup*}
+for every $\xi\in\C$.
+Then, for $n=0$ we get
+\begin{dmath}[label={preindicial}]
+   \lambda_{0} (\rho ) w_{0} = 0,
+\end{dmath}
+and for $n\in\N\backslash\lbrace0\rbrace$ we have
+\begin{dmath*}
+   ( \rho + n ) (\rho + n -1) w_{n} +
+   \sum_{j=0}^{n} \left[ (\rho + j) p_{n-j} + q_{n-j} \right] w_{j} =
+   ( \rho + n ) (\rho + n -1) w_{n} +
+   \left[ (\rho + n) p_{0} + q_{0}  \right] w_{n} + 
+   \sum_{j=0}^{n-1} \left[ (\rho + j) p_{n-j} + q_{n-j} \right] w_{j} =
+   \lambda_{0} (\rho +n) w_{n} + \sum_{j=0}^{n-1} \lambda_{n-j} (\rho + j) w_{j}
+\end{dmath*},
+so
+\begin{dmath}
+   \lambda_{0} (\rho +n) w_{n} + \sum_{j=0}^{n-1} \lambda_{n-j} (\rho + j) w_{j}=0
+\end{dmath}.
+Since $w_{0} \neq 0$, 
+Eq.~\eqref{eq:preindicial} yields
+\begin{dmath}[label={indicial}]
+   \lambda_{0}(\rho) = 0
+\end{dmath},
+or more explicitly
+\begin{dmath*}
+   \rho^{2} + (p_{0} -1) \rho + q_{0} =0 
+\end{dmath*}.
+Eq.~\eqref{eq:indicial} \index{Indicial equation} is called ``indicial equation'' associated with the
+point $z_{0}$ and the differential equation~\eqref{eq:ode}.
+%\end{proof}
+
+\section{The point at infinity}
+\label{sec:point at infinity}
+
+\section{Totally Fuchsian equations}
+
+\begin{approfondimento}
+   Integrals of Fuchsian differential equations are a source of
+   trascendental functions.
+   \begin{flushright}
+      --- Folklore
+   \end{flushright}
+\end{approfondimento}
+
+\begin{definition}
+   Eq.~\eqref{eq:ode} is called ``of Fuchsian class'' or ``totally
+   Fuchsian'' if all its singular points  in the \emph{extended} complex plane are
+   Fuchsian singular points.
+\end{definition}
+
+The definition includes the point at infinity. 
+So far, the isolated singularities of eq.~\eqref{eq:ode} has been
+assumed to be finite  in number \emph{by hypothesis}, it is clear that a
+totally Fuchsian equation \emph{must} have at most finitely many singular point.
+
+
+\section{Interlude on M\"obius transformations}
+
+\subsection{Definition and first properties}
+
+In this section, we shall study mappings of the extended complex plane onto
+itself of the form
+\begin{dmath}[label={moebius}]
+   w (z) = \frac{ a z + b}{cz +d } ,
+\end{dmath}
+where $a$, $b$, $c$, $d$ are arbitrary complex numbers which satisfy
+\begin{dmath}
+   ad -bc \neq 0.
+\end{dmath}
+Since multiplying all these numbers by a common non-zero number does not alter
+the mapping,  it is always possible to assume that 
+\begin{dmath}
+   ad -bc = 1 .
+\end{dmath}
+Eq.~\eqref{eq:moebius} is referred to as ``M\"obius transformation'', in honor
+of  the mathematician M\"obius 
+(the same of the famous
+strip).
+It is also sometimes called ``homographic transformation'' or in short ``homography''.
+
+Due to the fact that these transformations  play an important role in various fields of pure and applied Mathematics and
+Physics, it seems useful to study their properties more carefully than what is
+needed for the purposes of the following sections.
+
+%A nice book to study these topics is \textcite{Blair:2000}. 
+%Most of this section is based from that book, and some other material is taken
+%from 
+%\textcite{Hille:1959,Ablowitz.Fokas:2003}. 
+
+\begin{theorem}
+   Any M\"obius transformation which is not  a linear function can always be obtained as the composition of two
+   linear transformations and one inversion.
+\end{theorem}
+\begin{proof}
+   If $c=0$ we get a linear transformation:
+   \begin{dmath*}
+      w(z) = \frac{a}{d} z + \frac{b}{d} .
+   \end{dmath*}
+   In the case $c\neq 0$, one can notice that 
+   \begin{dmath*}
+      \frac{az+b}{cz+d} = \frac{a}{c} + \frac{bc -ad}{c( cz +d)}, 
+   \end{dmath*}
+   which shows explicitly that the transformation may be obtained equivalently
+   through the composition of 
+   \begin{dgroup*}
+      \begin{dmath*}
+	 w_{1}(z) = cz +d ,
+      \end{dmath*}
+      \begin{dmath*}
+	 w_{2} (w_{1}) = \frac{1}{w_{1}},
+      \end{dmath*}
+      \begin{dmath*}
+	 w_{3} (w_{2}) = \frac{a}{c} + \frac{bc-ad}{c} w_{2} ,
+      \end{dmath*}
+   \end{dgroup*}
+   so the theorem is proven.
+\end{proof}
+
+\subsection{Group structure}
+
+\begin{theorem}
+   The set of all and only M\"obius transformations on the extended complex plane
+   form a group.
+\end{theorem}
+
+
+\begin{proof}
+   Consider the set of all and only the M\"obius transformations on the extended
+   complex $z$-plane.
+   The composition of any two M\"obius functions is again a M\"obius function. 
+   We have to prove that 
+   \begin{aenumerate}
+   \item
+      Composition of M\"obius transformations is associative;
+   \item
+      Among all and only the M\"obius functions, there exists an identity
+      transformation, \ie, a M\"obius transformation such that 
+   \item
+      There exists a null element, \ie, a M\"obius transformation which, after
+      composition  with
+      the identity, remains the same.
+   \item
+      Any M\"obius transformation is invertible. 
+   \end{aenumerate}
+\end{proof}
+
+\section{The Papperitz-Riemann equation}
+
+The main result of this section is
+\begin{approfondimento}
+   All second-order totally Fuchsian equations having precisely
+   three regular singular points in the extended complex plane
+   are \emph{uniquely} determined by the position of their
+   singular points and the corresponding pairs of characteristic exponents at
+   these points.
+\end{approfondimento}
+
+\begin{dmath*}
+   \PRiemann{a,\alpha,\alpha'}{b,\beta,\beta'}{c,\gamma,\gamma'}{z}.
+\end{dmath*}

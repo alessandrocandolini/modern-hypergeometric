@@ -1,0 +1,228 @@
+\documentclass[10pt,a4paper,footinclude=true,headinclude=true]{scrbook}
+
+\newcommand{\myName}{Alessandro Candolini}
+\newcommand{\myTitle}{Hypergeometric functions}
+\newcommand{\myLocation}{London}
+\newcommand{\myTime}{\today}
+
+% *****************************************************************************
+%  Main packages
+% *****************************************************************************
+
+\usepackage[T1]{fontenc}
+\usepackage[applemac]{inputenc}
+\usepackage[english]{babel}
+\usepackage[babel]{csquotes}
+\usepackage{graphicx}
+
+\usepackage[nospace]{varioref}
+
+\usepackage[final]{microtype}
+
+\usepackage{listings}
+
+\usepackage{makeidx}
+
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{subfig}
+\usepackage{url}
+
+% *****************************************************************************
+% BIBLaTeX
+% *****************************************************************************
+\usepackage[%
+style=philosophy-modern,
+%style=philosophy-classic,
+scauthorsbib,
+hyperref,backref,
+backend=biber,
+square,
+natbib,ibidtracker=false]{biblatex}
+
+\bibliography{myBibliography2}
+
+% *****************************************************************************
+% ClassicThesis
+% *****************************************************************************
+\usepackage[pdfspacing]{classicthesis}
+
+% ********************************************************************
+% General commands
+% ********************************************************************
+
+% un ambiente ad hoc per le citazioni
+\newenvironment{citazione}%
+  {\begin{quotation}\small\ignorespaces}%
+  {\end{quotation}}
+\newenvironment{approfondimento}%
+  {\begin{quotation}\small\ignorespaces}%
+  {\end{quotation}}
+
+% indica a LaTeX la cartella dove sono riposte le immagini
+\graphicspath{{./},{./Asymptote/}, {./Images/}}
+
+% i.e.
+\newcommand{\ie}{i.\,e.}
+\newcommand{\Ie}{I.\,e.}
+\newcommand{\eg}{e.\,g.}
+\newcommand{\Eg}{E.\,g.}
+
+
+% ********************************************************************
+% hyperref
+% ********************************************************************
+\hypersetup{%
+    colorlinks=true, linktocpage=true, pdfstartpage=1, pdfstartview=FitV,%
+    breaklinks=true, pdfpagemode=UseNone, pageanchor=true, pdfpagemode=UseOutlines,%
+    plainpages=false, bookmarksnumbered, bookmarksopen=true, bookmarksopenlevel=1,%
+    hypertexnames=true, pdfhighlight=/O,%
+    urlcolor=webbrown, linkcolor=RoyalBlue, citecolor=RoyalBlue,
+    pdftitle={\myTitle},%
+    pdfauthor={\textcopyright\ \myName},%
+    pdfsubject={},%
+    pdfkeywords={},%
+    pdfcreator={pdfLaTeX},%
+    pdfproducer={LaTeX con hyperref e ClassicThesis}%
+}
+
+\hypersetup{citecolor=webgreen}
+
+\newcommand{\mail}[1]{\href{mailto:#1}{\texttt{#1}}}
+
+
+% *****************************************************************************
+% Matematica
+% *****************************************************************************
+
+% AMSmath packages
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+% comandi per gli insiemi numerici (serve il pacchetto amssymb)
+\newcommand{\numberset}{\mathbb}
+\newcommand{\N}{\numberset{N}}
+\newcommand{\Z}{\numberset{Z}}
+\newcommand{\Q}{\numberset{Q}}
+\newcommand{\R}{\numberset{R}}
+\newcommand{\C}{\numberset{C}}
+
+% Dirac notation  (serve il pacchetto braket)
+\usepackage{braket}
+
+% pacchetto cool
+\usepackage{cool}
+
+% *****************************************************************************
+% Teoremi e definizioni
+% *****************************************************************************
+
+\usepackage{amsthm}                       % Serve il pacchetto amsthm.
+
+\makeatletter
+\newtheoremstyle{classicdef}%             % Stile tipografico dei teoremi
+{11pt}%                                   % Spazio che precede l'enunciato
+{11pt}%                                   % Spazio che segue l'enunciato
+{}%                                       % Stile del font dell'enunciato
+{}%                                       % Rientro (se vuoto, nessun rientro;
+%                                         % \parindent = rientro dei capoversi)
+{\scshape}%                               % Font dell'intestazione
+{:}%                                      % Punteggiatura dopo l'intestazione
+{.5em}%                                   % Spazio che segue l'intestazione:
+%                                         % " " = normale spazio inter-parola;
+%                                         % \newline = a capo
+{}%                                       % Specifica intestazione enunciato
+\makeatother
+
+%\theoremstyle{definition}
+\theoremstyle{classicdef}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
+\newtheorem{definition}{Definition}[chapter]
+\newtheorem*{homework}{Homework}
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\renewcommand{\qedsymbol}{\rule{.5em}{.5em}}
+
+
+% *****************************************************************************
+% caption
+% *****************************************************************************
+\usepackage{caption}                      % Fancy captions and more.
+\captionsetup{format=hang,font=small}
+\captionsetup[table]{skip=\medskipamount}
+
+
+% *****************************************************************************
+% breqn
+% *****************************************************************************
+\usepackage{mathtools}                    % Add support for cramped,
+\usepackage{flexisym}              % Add support to Euler font
+\usepackage{breqn}                        % Breqn
+
+\setkeys{breqn}{labelprefix={eq:}}
+
+
+% *****************************************************************************
+% Migliorare il kerning dell'apostrofo coi font MinionPro
+% *****************************************************************************
+\makeatletter
+\catcode`\'=12
+\def\qu@te{'}
+\catcode`'=\active
+\begingroup
+\obeylines\obeyspaces%
+\gdef\@resetactivechars{%
+\def^^M{\@activechar@info{EOL}\space}%
+\def {\@activechar@info{space}\space}%
+}%
+\endgroup
+\providecommand{\texorpdfstring}{\@firstoftwo}
+\protected\def'{\texorpdfstring{\active@quote}{\qu@te}}
+\def\active@quote{\relax
+  \ifmmode
+    \expandafter^\expandafter\bgroup\expandafter\prim@s
+  \else
+    \expandafter\futurelet\expandafter\@let@token\expandafter\qu@t@
+  \fi}
+\def\qu@t@{%
+  \ifx'\@let@token
+    \qu@te\qu@te\expandafter\@gobble
+  \else
+    {}\qu@te{}\penalty\@M\hskip\expandafter\z@skip
+  \fi}
+\scantokens\expandafter{%
+  \expandafter\def\expandafter\pr@m@s\expandafter{\pr@m@s}}
+\makeatother
+
+\begin{document}
+\pagenumbering{roman}
+\pagestyle{plain}
+% *****************************************************************************
+% Materiale iniziale
+% *****************************************************************************
+\input{FrontBackmatter/Titlepage}
+\input{FrontBackmatter/Titleback}
+%\input{FrontBackmatter/Dedication}
+%\input{FrontBackmatter/Sommario+Abstract}
+%\input{FrontBackmatter/Pubblicazioni}
+%\input{FrontBackmatter/Ringraziamenti}
+\pagestyle{scrheadings}
+\input{FrontBackmatter/TableOfContents}
+\input{FrontBackmatter/Preface}
+\cleardoublepage
+% *****************************************************************************
+% Materiale principale
+% *****************************************************************************
+\pagenumbering{arabic}
+\input{Chapters/Chapter1}
+\input{Chapters/Chapter2}
+\input{Chapters/Chapter3}
+\appendix
+\input{Chapters/AppendixA}
+% *****************************************************************************
+% Materiale finale
+% *****************************************************************************
+\input{FrontBackmatter/Bibliography}
+\input{FrontBackmatter/Index}
+\end{document}
