@@ -1,4 +1,4 @@
-[![CI](https://github.com/alessandrocandolini/modern-hypergeometric/actions/workflows/ci.yml/badge.svg)](https://github.com/alessandrocandolini/modern-hypergeometric/actions/workflows/ci.yml)
+[![CI](https://github.com/alessandrocandolini/notes-hypergeometric/actions/workflows/ci.yml/badge.svg)](https://github.com/alessandrocandolini/notes-hypergeometric/actions/workflows/ci.yml)
 
 # notes on the hypergeometric functions 
 
