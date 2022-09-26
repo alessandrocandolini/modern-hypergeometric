@@ -54,10 +54,6 @@ natbib,ibidtracker=false]{biblatex}
 
 
 % Footnote
-\makeatletter
-\renewcommand*\thefootnote{\@fnsymbol\c@footnote}%
-\makeatother
-
 \usepackage[perpage, symbol*, stable, multiple]{footmisc}
 \setlength{\footnotemargin}{.6em}%
 
@@ -124,21 +120,19 @@ natbib,ibidtracker=false]{biblatex}
 \usepackage{cool}
 
 % Theorems
-\usepackage{amsthm}                       % Serve il pacchetto amsthm.
+\usepackage{amsthm}
 
 \makeatletter
-\newtheoremstyle{classicdef}%             % Stile tipografico dei teoremi
-{11pt}%                                   % Spazio che precede l'enunciato
-{11pt}%                                   % Spazio che segue l'enunciato
-{}%                                       % Stile del font dell'enunciato
+\newtheoremstyle{classicdef}%
+{11pt}%                                   % Before
+{11pt}%                                   % After
+{}%                                       % Font
 {}%                                       % Rientro (se vuoto, nessun rientro;
 %                                         % \parindent = rientro dei capoversi)
-{\scshape}%                               % Font dell'intestazione
-{:}%                                      % Punteggiatura dopo l'intestazione
-{.5em}%                                   % Spazio che segue l'intestazione:
-%                                         % " " = normale spazio inter-parola;
-%                                         % \newline = a capo
-{}%                                       % Specifica intestazione enunciato
+{\scshape}%                               % Font
+{:}%
+{.5em}%
+{}%
 \makeatother
 
 \theoremstyle{classicdef}

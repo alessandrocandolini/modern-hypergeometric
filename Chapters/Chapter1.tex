@@ -2,15 +2,13 @@
 \label{chap:fuchs}
 
 
-%In this chapter, we discuss a number of facts
-This chapter is mainly concerned with existence and properties (analytic structure, many-valuedness,
+This chapter is mostly concerned with existence and properties (analytic structure, many-valuedness,
 convergent power series representations,%
 \footnote{Asymptotic (divergent) power series
-   representations, integral representations or other kind of series
-   representations are not discussed in general.}
-etc) of the integrals of linear homogeneus ordinary differential equations of the
-second order in which the independent variable is complex and whose coefficients
-are single-valued and analytic complex functions of the independent variable, having
+   representations are not discussed.}
+etc) of integrals of second-order linear homogeneus ordinary differential equations of complex-valued functions of one complex variable, 
+where the coefficients
+are single-valued analytic complex functions of the independent variable, having
 at most finitely many isolated singular points in (a given domain of) the
 complex plane.
 
@@ -36,37 +34,35 @@ complex plane.
 %coefficients are rational functions, this result is known as H\"older
 %theorem).}
 
-Several, through  not all,%
-\footnote{Riemann's zeta function and Euler's gamma function are examples of
-   functions which are essentially characterized by \emph{functional} equations
-   instead of differential equation.  (For instance, H\"older's theorem states that
+Several
+   higher trascendental functions of applied
+mathematics satisfy differential equations of this form,%
+\footnote{Not all of them. Riemann's zeta function and Euler's gamma function are examples of
+   functions which are characterized by \emph{functional} equations
+   instead of differential equation. (For instance, H\"older's theorem states that
    the gamma function does not satisfy \emph{any} algebraic differential equation
    whose coefficients are rational functions.) Other higher trascendental
    functions, like the Painlev\'e trascendents, arise in connection with the
    solution of certain \emph{non}-linear ordinary differential equations in the
    complex field (see, \eg, \textcite{Ince:1956}).}
-   higher trascendental functions of applied
-mathematics satisfy differential equations of this form,
    and the results of this chapter
-provide a useful  tool for establishing in a systematic way some of their
-properties and representations, working directly from the differential
-equation satisfied by them.% 
-\footnote{Someone might prefer to begin
-   with integral or series representations, 
-   and to write down the differential
-   equations only later.} In particular, we shall put these
-results at work in the following chapter discussing Gauss' hypergeometric
+provide a theoretical framework to establish some of their
+properties and representations starting directly from the differential equation that they satisfy.% 
+\footnote{Alternatively, it would be possible to start from
+   their integral or power series representations, 
+   and derive the differential
+   equations later.} In particular, these results will be used 
+in the next chapter to study the Gauss' hypergeometric
 differential equation and its solutions.
 
 This chapter is mostly based on \textcite[\S~V]{Tricomi:1961};
 \textcite[\S~2]{Wang.Guo:1989}. See also \textcite[\S~V]{Smirnov:1964};
-\textcite[\S~X]{Whittaker.Watson:1927}.  In what follows, knowledge of
-the theory of analytic  functions of one complex variable is assumed.%
+\textcite[\S~X]{Whittaker.Watson:1927}.  Knowledge of
+the theory of analytic functions of one complex variable is assumed.%
 \footnote{%
-   There are many books on the theory of analytic functions of one complex
-   variable.  Among my favourite ones are the monographies by
-   \textcite{Ablowitz.Fokas:2003,Stein.Shakarchi:2003,Marsden.Hoffman:1987,Greene.Krantz:2006};
-   or consult any good book on complex analysis.}
+   There are plenty of books about the theory of analytic functions of one complex
+   variable.  Among my favourites are the monographies by
+   \textcite{Ablowitz.Fokas:2003,Stein.Shakarchi:2003,Marsden.Hoffman:1987,Greene.Krantz:2006}.}
 
 
 %\section{General theory of linear differential equations in the complex field}
@@ -75,56 +71,46 @@ the theory of analytic  functions of one complex variable is assumed.%
    uniqueness of the solution in the neighbourhood of an ordinary
    point}\label{sec:existence}
 
-%\section{Local solution about an ordinary point}
-%\label{sec:existence}
-%\section{Ordinary and singular points}
 
-A full and systematic account of the general theory of ordinary differential
-equations or systems of ordinary differential equations in the complex field,
-although useful in practise, is beyond the scope of this handout. For a broader
-discussion, see, \eg, the previously mentioned book by \textcite{Tricomi:1961}
+A systematic treatment of the general theory of ordinary differential
+equations (or systems of ordinary differential equations) in the complex field
+is beyond the scope of this document. For a more general approach, refer to
+\textcite{Tricomi:1961}
 or \textcite{Ince:1956}.
 
 %\nocite{Ilyashenko.Yakovenko:2008} 
 %\nocite{Teschl:2011}
 
-We \graffito{Second-order homogeneus linear ordinary differential equations in
-   the complex field\ldots} shall restrict our attention to a linear homogeneus
-ordinary differential equation of the second order,% 
+Let's \graffito{Second-order complex homogeneus linear ordinary differential equations with variable coefficients} 
+   focus  on second-order 
+   linear homogeneus
+ordinary differential equation with variable coefficients in standard form,% 
 \footnote{%
-   The result of the first sections of this chapter apply with obvious
-   generalizations to the case of linear equations of arbitrary order, but
-   the second order is enough to our purposes and leads to easier
-   notations.
+   Some of the result hereafter can be extended trivially 
+   to the case of equations of arbitrary order, but
+   the second order is enough for the purposes of this conversation, and it leads to easier
+   notations and proofs. 
 }
-which can always be written in such a way that the coefficient of the
-second-order derivative is identically equal to one (this will be taken to be
-the standard form of the equation of the equation):
-\begin{dmath}[label={ode}, frame]
-   u'' (z) + p(z) u'(z) + q(z) u(z) = 0 ,
+\begin{dmath}[label={ode}]
+   \psi'' (z) + p(z) \psi'(z) + q(z) \psi(z) = 0 ,
 \end{dmath}
-where $u(z)$ is the unknown (complex-valued) function and $z$ denotes the
-independent complex variable. The coefficients $p(z)$ and $q(z)$ are assigned
-complex-valued functions defined on some given set of the complex $z$-plane.
+where $\psi$ is the unknown complex-valued function and $z$ denotes the
+independent complex variable. The coefficients $p$ and $q$ are known
+complex-valued functions defined on some given subset of the complex $z$-plane.
 Primes denote differentiation, in the complex sense,
 with respect to the variable $z$.
 
-Throughout this chapter, 
-\graffito{\ldots whose coefficients are single-valued and analytic up to
-   finitely many isolated singularities}
+Hereafter,
+%\graffito{\ldots whose coefficients are single-valued and analytic up to
+%   finitely many isolated singularities}
 %in a given domain of the complex plane.}
-we shall assume that  each of the coefficients $p(z)$ and
-$q(z)$ is a
-\emph{single-valued}
-function, defined and \emph{analytic} on some given \emph{domain}%
-\footnote{\ie, an open and connected subset of $\C$.}
-$\Omega \subset\C$ 
-of the complex $z$-plane (eventually, $\Omega = \C$), with the possible exception of \emph{at most} a finite number of
-\emph{isolated} singular points%
-\footnote{which may be either poles or essential singularities of the coefficients.}
-within $\Omega$.
-
-
+   $\Omega \subset \C$ is a \emph{domain} (ie, open and connected subset of $\C$) and 
+   $p, q : \Omega \rightarrow\C$ are 
+\emph{single-valued} and \emph{analytic} functions
+with \emph{at most} finitely many
+\emph{isolated} singular 
+(\ie, either poles or essential singularities)
+points in $\Omega$. Potentially, $\Omega = \C$.
 %\begin{mdframed}[backgroundcolor=lightgray,
 %roundcorner=5pt, 
 %skipabove=10pt,skipbelow=10pt]
@@ -168,46 +154,44 @@ within $\Omega$.
 
 %\subsection{Classification of ordinary and singular points}
 
-Let us classify the point of $\Omega$ according to whether or not they are
-isolated singular points of the coefficients of the differential equation.%
+  The point of $\Omega$ can be classified according to the behaviour of the 
+  the coefficients of the differential equation at those points.%
 \footnote{%
-   This classification holds for points $z_{0}$ at \emph{finite} distance
-   in the complex plane. The classification of the point at infinity (in
-   the case $\Omega = \C$) requires special treatment and will be discussed
+   The classification of the point at infinity (which makes sense in 
+   the special case where $\Omega = \C$) requires special care and will be discussed
    separately in \S~\ref{sec:point at infinity}.
 }
 
 \begin{definition}
 
-   Let $z_{0}\in\Omega$.  \graffito{Definition of ordinary point of the
-      differential equation} $z_{0}$ is called an ``ordinary'' point of
-   Eq.~\eqref{eq:ode} if the coefficient functions $p(z)$ and $q(z)$ are
+   Let $z_{0}\in\Omega$.
+   \graffito{Ordinary and singular points of the differential equation} 
+   $z_{0}$ is called an ``ordinary'' point of
+   Eq.~\eqref{eq:ode} if $p$ and $q$ are 
    both analytic at $z_{0}$.%
    \footnote{%
-      As usual, we shall see that a function is analytic \emph{at} a
+      As usual, we say that a function is analytic \emph{at} a
       point $z_{0}$ to say that the function is analytic in an (open)
       neighbourhood of $z_{0}$.
    } 
-   Otherwise, if $z_{0}$ is a singular point of either $p(z)$ or $q(z) $ or
-   both, then $z_{0}$ is said to be a ``singular'' point of
-   Eq.~\eqref{eq:ode}.
+   Similarly, $z_{0}$ is called a ``singular'' point of Eq.~\eqref{eq:ode} if $z_0$ is a isolated singular point of either $p$ or $q$ or both.
 
 \end{definition}
 
 Let $z_{0}\in\Omega$ an ordinary point of Eq.~\eqref{eq:ode}.  We look for
-solutions $u(z)$ \graffito{Initial conditions} of Eq.~\eqref{eq:ode} defined in
-a suitable neighbourhood (to be determined) of $z_{0}$ and which satisfy the
+solutions $\psi$ \graffito{Initial conditions} of Eq.~\eqref{eq:ode} defined in
+a suitable neighbourhood (to be determined) of $z_{0}$ and satisfying the 
 following initial conditions at $z_{0}$:
 \begin{dmath}[label={ic}]
    \left\lbrace
    \addtolength{\arraycolsep}{-3pt}
    \begin{array}{rcl}
-      u(z_{0}) &=& \alpha \\
-      u'(z_{0})&=&\beta
+      \psi(z_{0}) &=& \alpha \\
+      \psi'(z_{0})&=&\beta
    \end{array}
    \right.
 \end{dmath}
-where $\alpha$ and $\beta$ are arbitrary-assigned complex numbers.
+where $\alpha, \beta \in \C$ are assigned complex numbers.
 Eq.~\eqref{eq:ode} together with the initial conditions~\eqref{eq:ic} constitute
 what is called an ``initial valued problem''.
 
@@ -225,13 +209,13 @@ what is called an ``initial valued problem''.
 %\section{Solution in the neighbourhood of an ordinary point}
 %\label{sec:existence}
 \begin{theorem}
-   Let $z_{0}\in\Omega$ be an ordinary point 
+  For every ordinary point of Eq.~\eqref{eq:ode} $z_{0}\in\Omega$ 
    \graffito{Local existence and uniqueness theorem}
    of Eq.~\eqref{eq:ode}.
    %and let $S\subseteq
    %\Omega$ be the disk centered at $z_{0}$ and whose radius is such that $p(z)$ and
    %$q(z)$ are analytic on $S$.
-   Then, for every complex $\alpha$ and $\beta$ there exists one and only one solution of Eq.~\eqref{eq:ode} 
+   and for every $\alpha,\beta\in\C$, there exists one and only one solution of Eq.~\eqref{eq:ode} 
    which satisfies 
    the initial conditions~\eqref{eq:ic} 
    and which is 
@@ -241,12 +225,12 @@ what is called an ``initial valued problem''.
 
 \begin{proof}
 
-   Let \graffito{The a-priori knowledge of the disk of convergence of the solution}
-   $S$ be the circle with centre at $z_{0}$ and whose radius is  such that every
-   point of $S$ is a point of $\Omega$ and is also an ordinary point of the
-   Eq.~\eqref{eq:ode}.  There always exists such $S$  with \emph{non-zero} radius
-   owing to the fact that $\Omega$ is an open set and all the singularities of
-   $p(z)$ and $q(z)$  (if any) are isolated.  We shall prove that a solution of
+   Let \graffito{disk of convergence of the solution}
+   $S$ be the circle with centre at $z_{0}$ and whose radius is such that every
+   point of $S$ is a point of $\Omega$ and is an ordinary point of 
+   Eq.~\eqref{eq:ode}.  There always exists such $S$ with \emph{non-zero} radius
+   due to the fact that $\Omega$ is an open set and all the singularities of
+   $p$ and $q$  (if any) are isolated.  We will prove that a solution of
    Eq.~\eqref{eq:ode} always exists which is \emph{analytic} in $S$ (perhaps also
    in a larger domain) and that such solution is also the unique analytic solution
    of Eq.~\eqref{eq:ode} satisfying the prescribed initial
@@ -262,10 +246,10 @@ what is called an ``initial valued problem''.
       proof which  can be easily adapted to the general case see, \eg,
       \textcite{Smirnov:1964,Wang.Guo:1989}.
    }
-   This is done by introducing a new unknown function $v(z)$ related to the
-   original one $u(z)$ by 
+   This is done by introducing a new unknown function $\phi$ related to the
+   original one $\psi$ by 
    \begin{dmath*}
-      u(z) = k(z) v(z)
+     \psi (z) = k(z) \varphi(z)
    \end{dmath*},
    where $k(z)$ is an auxiliary function to be determined by requiring
    that the resulting differential equation for $v(z)$ have the coefficient
