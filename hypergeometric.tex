@@ -47,7 +47,7 @@ backend=biber,
 square,
 natbib,ibidtracker=false]{biblatex}
 
-\bibliography{myBibliography2}
+\bibliography{myBibliography9}
 
 % ClassicThesis
 \usepackage[pdfspacing, eulerchapternumbers,listings,subfig,eulermath,parts]{classicthesis}
@@ -61,12 +61,12 @@ natbib,ibidtracker=false]{biblatex}
 \usepackage[perpage, symbol*, stable, multiple]{footmisc}
 \setlength{\footnotemargin}{.6em}%
 
-\usepackage[punct-after=false]{fnpct}
+\usepackage{fnpct}
 \setfnpct{add-punct-marks=:}
 \setfnpct{add-punct-marks=;}
 
 \usepackage{footnotebackref}
-\include{footnote-config}% fot hyperlinks
+\include{fix-footnote-hyperlinks}
 
 \newenvironment{citazione}%
   {\begin{quotation}\small\ignorespaces}%
@@ -158,6 +158,7 @@ natbib,ibidtracker=false]{biblatex}
 \usepackage{mathtools}
 \usepackage{flexisym}
 \usepackage{breqn}
+\include{fix-euler-font}
 
 \setkeys{breqn}{labelprefix={eq:}}
 
