@@ -2,7 +2,7 @@
 \label{chap:fuchs}
 
 
-This chapter is mostly concerned with existence and properties (analytic structure, many-valuedness,
+This chapter is concerned with existence and properties (analytic structure, many-valuedness,
 convergent power series representations,%
 \footnote{Asymptotic (divergent) power series
    representations are not discussed.}
@@ -34,10 +34,10 @@ complex plane.
 %coefficients are rational functions, this result is known as H\"older
 %theorem).}
 
-Several
+A number of
    higher trascendental functions of applied
 mathematics satisfy differential equations of this form,%
-\footnote{Not all of them. Riemann's zeta function and Euler's gamma function are examples of
+\footnote{Not all of them. Riemann's zeta function and Euler's gamma function are notable examples of
    functions which are characterized by \emph{functional} equations
    instead of differential equation. (For instance, H\"older's theorem states that
    the gamma function does not satisfy \emph{any} algebraic differential equation
@@ -48,7 +48,7 @@ mathematics satisfy differential equations of this form,%
    and the results of this chapter
 provide a theoretical framework to establish some of their
 properties and representations starting directly from the differential equation that they satisfy.% 
-\footnote{Alternatively, it would be possible to start from
+\footnote{Alternatively, it would be possible to define these functions explicitly from
    their integral or power series representations, 
    and derive the differential
    equations later.} In particular, these results will be used 
@@ -246,32 +246,32 @@ what is called an ``initial valued problem''.
       proof which  can be easily adapted to the general case see, \eg,
       \textcite{Smirnov:1964,Wang.Guo:1989}.
    }
-   This is done by introducing a new unknown function $\phi$ related to the
+   This is done by introducing a new unknown function $\varphi$ related to the
    original one $\psi$ by 
    \begin{dmath*}
      \psi (z) = k(z) \varphi(z)
    \end{dmath*},
-   where $k(z)$ is an auxiliary function to be determined by requiring
-   that the resulting differential equation for $v(z)$ have the coefficient
-   function of $v'(z)$
+   where $k$ is an auxiliary function to be determined by requiring
+   that the resulting differential equation for $\varphi$ have the coefficient
+   function of $\varphi'$
    identically equal to
    zero. We shall see that it always possible to find such $k(z)$ and 
    we shall give an explicit formula for it. 
-   In fact, the first- and second-order derivatives of $u(z)$ are
+   In fact, the first- and second-order derivatives of $\psi$ are
    \begin{dgroup*}
       \begin{dmath*}
-	 u'(z) = k'(z) v(z) + k(z) v'(z)
+	 \psi'(z) = k'(z) \varphi(z) + k(z) \varphi'(z)
       \end{dmath*},
       \begin{dmath*}
-	 u''(z) = k''(z) v(z) + 2k'(z) v'(z) + k(z) v''(z) 
+	 \psi''(z) = k''(z) \varphi(z) + 2v'(z) \varphi'(z) + k(z) \varphi''(z) 
       \end{dmath*}.
    \end{dgroup*}
-   Plugging into Eq.~\eqref{eq:ode}, we get the differential equation for $v(z)$, 
+   Plugging into Eq.~\eqref{eq:ode}, we get the differential equation for $\varphi$, 
    \begin{dmath*}%[label={odev(z)convp(z)}]
-      k(z) v''(z) + \big[ 2 k'(z) + p(z) k(z) \big] v'(z) + \big[ k''(z) + p(z)
-      k'(z) + q(z) k(z) \big] v(z) = 0
+      k(z) \varphi''(z) + \big[ 2 k'(z) + p(z) k(z) \big] \varphi'(z) + \big[ k''(z) + p(z)
+      k'(z) + q(z) k(z) \big] \varphi(z) = 0
    \end{dmath*},
-   and in order the coefficient of $v'(z)$ to be zero, $k(z)$ must satisfy 
+   and in order the coefficient of $\varphi'$ to be zero, $k$ must satisfy 
    \begin{dmath}[label={odek(z)}]
       2k'(z) + p(z) k(z) = 0
    \end{dmath}.
@@ -313,15 +313,15 @@ what is called an ``initial valued problem''.
    contour of integration, since the integrand
    $p(\xi)$ is analytic is $S$ (by hypothesis) and $z$ is any point in $S$.
    After dividing by $k(z)$ (now we know from the explicit formula of $k$ that
-   $k$ never vanishes) the equation for $v(z)$ becomes  
+   $k$ never vanishes) the equation for $\varphi$ becomes  
    \begin{dmath}[label={odev(z)}]
-      v''(z) + J(z) v(z) = 0
+      \varphi''(z) + J(z) \varphi(z) = 0
    \end{dmath},
    where 
    \begin{dmath*}
       J(z) = \frac{k''(z)}{k(z)} + p(z) \frac{k'(z)}{k(z)} + q(z)
    \end{dmath*}.
-   We can use Eq.~\eqref{eq:odek(z)} to rewrite $J(z)$ in a more explicit form.
+   We can use Eq.~\eqref{eq:odek(z)} to rewrite $J$ in a more explicit form.
    Notice that
    \begin{dmath*}[compact]
       \left( \frac{k'(z)}{k(z)} \right)^{\prime} = 
